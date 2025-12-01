@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="810" viewBox="0 0 1440 810" role="img" aria-labelledby="title desc">
+  <title id="title">Market 360 Dashboard preview</title>
+  <desc id="desc">Stylized placeholder preview of the Market 360 dashboard layout.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#e5e7eb" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="810" fill="url(#bg)" />
+  <rect x="32" y="36" width="210" height="740" rx="16" fill="white" stroke="#cbd5e1" stroke-width="2" />
+  <rect x="260" y="36" width="1148" height="60" rx="12" fill="white" stroke="#cbd5e1" stroke-width="2" />
+  <rect x="260" y="112" width="560" height="220" rx="14" fill="url(#panel)" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="840" y="112" width="568" height="220" rx="14" fill="url(#panel)" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="260" y="350" width="1148" height="150" rx="14" fill="url(#panel)" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="260" y="520" width="560" height="180" rx="14" fill="url(#panel)" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="840" y="520" width="568" height="180" rx="14" fill="url(#panel)" stroke="#cbd5e1" stroke-width="1.5" />
+  <rect x="260" y="720" width="1148" height="56" rx="14" fill="#1f4b99" opacity="0.08" />
+  <circle cx="1110" cy="210" r="64" fill="#1f4b99" opacity="0.8" />
+  <circle cx="1110" cy="210" r="42" fill="#00b8a9" opacity="0.8" />
+  <circle cx="1110" cy="210" r="18" fill="white" />
+  <text x="276" y="74" font-family="Inter, Arial, sans-serif" font-size="24" fill="#0f172a" font-weight="700">Market 360° Dashboard</text>
+  <text x="52" y="76" font-family="Inter, Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="600">Industries</text>
+  <text x="280" y="148" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1f2937" font-weight="600">Overview</text>
+  <text x="860" y="148" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1f2937" font-weight="600">Demographics</text>
+  <text x="280" y="386" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1f2937" font-weight="600">Business &amp; Value Chain</text>
+  <text x="280" y="556" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1f2937" font-weight="600">Macro &amp; Policy Environment</text>
+  <text x="860" y="556" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1f2937" font-weight="600">Leading/Lagging Indicators</text>
+  <text x="280" y="754" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1f2937" font-weight="700">AI Reports &amp; Scenarios</text>
+  <text x="280" y="176" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Design and assembly of vehicles; shifting to EVs and software-defined platforms.</text>
+  <text x="52" y="110" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Automotive</text>
+  <text x="52" y="138" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Oil &amp; Gas</text>
+  <text x="52" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Pharma</text>
+  <text x="52" y="194" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Telecom</text>
+  <text x="52" y="222" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Electronics</text>
+  <text x="52" y="250" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Agriculture</text>
+  <text x="52" y="278" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Chemicals</text>
+  <text x="52" y="306" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Mining</text>
+  <text x="52" y="334" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Food &amp; Beverage</text>
+  <text x="52" y="362" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Education</text>
+  <text x="52" y="390" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Transport &amp; Logistics</text>
+  <text x="52" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Utilities</text>
+  <text x="52" y="446" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Hospitality</text>
+  <text x="52" y="474" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Professional Services</text>
+  <text x="52" y="502" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Insurance</text>
+  <text x="52" y="530" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Aerospace</text>
+  <text x="52" y="558" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Consumer Goods</text>
+  <text x="52" y="586" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Media</text>
+  <text x="52" y="614" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Renewable Energy</text>
+  <text x="52" y="642" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Textiles</text>
+  <text x="52" y="670" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">Forestry</text>
+  <text x="52" y="698" font-family="Inter, Arial, sans-serif" font-size="12" fill="#475569">More…</text>
+</svg>

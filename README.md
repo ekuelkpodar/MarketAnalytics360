@@ -16,6 +16,9 @@
 - Enter your OpenRouter API key, optional base URL, and model string (e.g., `anthropic/claude-3.5-sonnet`). Use the IDs listed in your OpenRouter dashboard.
 - Keys are stored only in your browser localStorage.
 
+## Preview
+![Market 360 Dashboard](./public/market-360-dashboard.svg)
+
 ## Stack
 - Next.js + React + TypeScript
 - Tailwind CSS for UI
