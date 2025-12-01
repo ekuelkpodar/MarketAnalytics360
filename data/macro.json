@@ -1,0 +1,100 @@
+[
+  {
+    "industryId": "automotive",
+    "political": ["Emissions and safety standards", "Trade tariffs on autos/parts"],
+    "economic": ["Highly cyclical; rate-sensitive", "Commodity input volatility"],
+    "social": ["Urbanization vs suburbanization", "Sustainability preferences"],
+    "technological": ["EV adoption", "ADAS/AV software", "Semiconductor availability"],
+    "environmental": ["Decarbonization pressure", "Battery recycling and sourcing"],
+    "legal": ["Product liability", "Data/privacy in connected cars"],
+    "macroRisks": [
+      { "name": "Supply chain constraints", "severity": 7 },
+      { "name": "Recessionary demand shock", "severity": 8 },
+      { "name": "Regulatory tightening", "severity": 6 }
+    ]
+  },
+  {
+    "industryId": "renewable-energy",
+    "political": ["Subsidies/auctions", "Interconnection policy"],
+    "economic": ["Capital intensive; rate sensitive", "Power price curves"],
+    "social": ["Community acceptance", "Corporate decarbonization demand"],
+    "technological": ["Storage cost declines", "Grid software", "Advanced inverters"],
+    "environmental": ["Land use", "Resource variability", "Lifecycle emissions"],
+    "legal": ["Permitting", "Grid codes/compliance"],
+    "macroRisks": [
+      { "name": "Interconnection delays", "severity": 8 },
+      { "name": "Interest rate spikes", "severity": 7 },
+      { "name": "Supply chain cost inflation", "severity": 6 }
+    ]
+  },
+  {
+    "industryId": "fintech",
+    "political": ["Licensing and regulatory clarity", "Data sovereignty"],
+    "economic": ["Credit cycles", "Consumer spending", "Interchange regulation"],
+    "social": ["Financial inclusion", "Mobile-first behavior"],
+    "technological": ["APIs/open banking", "AI for risk/fraud", "Real-time payments"],
+    "environmental": ["Limited direct footprint", "ESG in underwriting"],
+    "legal": ["KYC/AML compliance", "Data/privacy"],
+    "macroRisks": [
+      { "name": "Regulatory tightening", "severity": 7 },
+      { "name": "Credit losses", "severity": 8 },
+      { "name": "Fraud/cyber incidents", "severity": 7 }
+    ]
+  },
+  {
+    "industryId": "e-commerce",
+    "political": ["Sales tax regimes", "Cross-border rules"],
+    "economic": ["Consumer confidence", "Shipping/fuel costs"],
+    "social": ["Digital adoption", "Convenience preference"],
+    "technological": ["Search/recommendation", "Logistics automation", "Payments"],
+    "environmental": ["Packaging waste", "Delivery emissions"],
+    "legal": ["Data/privacy", "Platform liability"],
+    "macroRisks": [
+      { "name": "Logistics disruption", "severity": 7 },
+      { "name": "Ad spend volatility", "severity": 6 },
+      { "name": "Return rate inflation", "severity": 5 }
+    ]
+  },
+  {
+    "industryId": "saas",
+    "political": ["Data residency", "Government procurement rules"],
+    "economic": ["IT budget cycles", "Rate environment for valuations"],
+    "social": ["Remote work", "Digital collaboration"],
+    "technological": ["Cloud-native architectures", "AI copilots", "Security"],
+    "environmental": ["Data center energy", "Cloud sustainability"],
+    "legal": ["IP, SLAs, data privacy"],
+    "macroRisks": [
+      { "name": "Budget cuts", "severity": 7 },
+      { "name": "Security incidents", "severity": 8 },
+      { "name": "Platform dependency", "severity": 5 }
+    ]
+  },
+  {
+    "industryId": "pharmaceuticals",
+    "political": ["Drug pricing policy", "Reimbursement frameworks"],
+    "economic": ["Healthcare spending", "FX for global sales"],
+    "social": ["Aging populations", "Access and affordability"],
+    "technological": ["Biologics, mRNA, AI discovery", "Manufacturing tech"],
+    "environmental": ["Supply resilience", "Cold chain"],
+    "legal": ["Patent cliffs", "Regulatory approvals", "Liability"],
+    "macroRisks": [
+      { "name": "Patent expirations", "severity": 8 },
+      { "name": "Regulatory delays", "severity": 7 },
+      { "name": "Pricing pressure", "severity": 7 }
+    ]
+  },
+  {
+    "industryId": "transportation-logistics",
+    "political": ["Trade policy", "Infrastructure investment"],
+    "economic": ["Freight cycles", "Fuel prices", "Industrial production"],
+    "social": ["E-commerce penetration", "Driver availability"],
+    "technological": ["Telematics", "Automation", "Route optimization"],
+    "environmental": ["Emissions mandates", "ESG reporting"],
+    "legal": ["Cross-border compliance", "Safety regulations"],
+    "macroRisks": [
+      { "name": "Fuel price spikes", "severity": 7 },
+      { "name": "Trade slowdowns", "severity": 7 },
+      { "name": "Labor shortages", "severity": 6 }
+    ]
+  }
+]

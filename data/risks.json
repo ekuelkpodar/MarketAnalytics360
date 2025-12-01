@@ -1,0 +1,79 @@
+[
+  {
+    "industryId": "automotive",
+    "risks": [
+      { "item": "Chip and battery supply constraints", "impact": "High" },
+      { "item": "Demand shocks from rates/recession", "impact": "High" },
+      { "item": "Regulatory non-compliance", "impact": "Medium" }
+    ],
+    "opportunities": ["EV cost down and scale", "Software/OTA monetization", "Vertical battery integration"],
+    "structuralTrends": ["Electrification", "Automation/ADAS", "Direct-to-consumer retail"],
+    "competitiveIntensity": { "level": "High", "notes": "Price competition rising in EVs" }
+  },
+  {
+    "industryId": "renewable-energy",
+    "risks": [
+      { "item": "Interconnection delays", "impact": "High" },
+      { "item": "Policy changes", "impact": "Medium" },
+      { "item": "Capex cost inflation", "impact": "Medium" }
+    ],
+    "opportunities": ["Storage pairing", "Corporate PPAs", "Grid services/ancillary markets"],
+    "structuralTrends": ["Decarbonization mandates", "Cost declines", "Grid digitalization"],
+    "competitiveIntensity": { "level": "Medium", "notes": "Fragmented developers; OEM consolidation" }
+  },
+  {
+    "industryId": "fintech",
+    "risks": [
+      { "item": "Regulatory tightening", "impact": "High" },
+      { "item": "Fraud and cyber", "impact": "High" },
+      { "item": "Credit losses", "impact": "High" }
+    ],
+    "opportunities": ["Embedded finance", "Open banking APIs", "AI-driven underwriting"],
+    "structuralTrends": ["Real-time payments", "Financial inclusion", "Platformization"],
+    "competitiveIntensity": { "level": "High", "notes": "Low switching costs in many categories" }
+  },
+  {
+    "industryId": "e-commerce",
+    "risks": [
+      { "item": "Logistics disruption", "impact": "Medium" },
+      { "item": "Rising return costs", "impact": "Medium" },
+      { "item": "Ad spend volatility", "impact": "Medium" }
+    ],
+    "opportunities": ["Own-brand expansion", "Advertising monetization", "Logistics automation"],
+    "structuralTrends": ["Mobile-first buying", "Social commerce", "Cross-border growth"],
+    "competitiveIntensity": { "level": "High", "notes": "Marketplace competition and thin margins" }
+  },
+  {
+    "industryId": "saas",
+    "risks": [
+      { "item": "Budget compression", "impact": "Medium" },
+      { "item": "Security breaches", "impact": "High" },
+      { "item": "Platform/API dependency", "impact": "Medium" }
+    ],
+    "opportunities": ["AI copilots and automation", "Usage-based expansion", "Verticalization"],
+    "structuralTrends": ["Cloud migration", "API economy", "Security-by-default"],
+    "competitiveIntensity": { "level": "Medium", "notes": "High in horizontal categories" }
+  },
+  {
+    "industryId": "pharmaceuticals",
+    "risks": [
+      { "item": "Patent cliffs", "impact": "High" },
+      { "item": "Clinical trial failures", "impact": "High" },
+      { "item": "Pricing pressure", "impact": "Medium" }
+    ],
+    "opportunities": ["Biologics and gene therapies", "Platform partnerships", "Emerging market access"],
+    "structuralTrends": ["Aging populations", "Precision medicine", "Digital trials"],
+    "competitiveIntensity": { "level": "Medium", "notes": "High barriers, concentrated incumbents" }
+  },
+  {
+    "industryId": "transportation-logistics",
+    "risks": [
+      { "item": "Fuel price spikes", "impact": "High" },
+      { "item": "Trade slowdowns", "impact": "Medium" },
+      { "item": "Labor shortages", "impact": "Medium" }
+    ],
+    "opportunities": ["Automation and routing", "Nearshoring flows", "Value-added warehousing"],
+    "structuralTrends": ["E-commerce growth", "Sustainability pressure", "Digitized freight"],
+    "competitiveIntensity": { "level": "Medium", "notes": "Fragmented carriers; platforms rising" }
+  }
+]

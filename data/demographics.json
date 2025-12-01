@@ -1,0 +1,104 @@
+[
+  {
+    "industryId": "automotive",
+    "customerSegments": [
+      { "name": "Retail consumers", "type": "B2C", "share": 55 },
+      { "name": "Fleet/commercial", "type": "B2B", "share": 35 },
+      { "name": "Public sector", "type": "Government", "share": 10 }
+    ],
+    "regions": [
+      { "name": "North America", "importance": "High" },
+      { "name": "Europe", "importance": "High" },
+      { "name": "Asia-Pacific", "importance": "High" }
+    ],
+    "incomeBrackets": ["Mid-income", "Upper income"],
+    "ageGroups": ["25-60"],
+    "urbanVsRural": { "urban": 60, "rural": 40 },
+    "notes": "High financing penetration; suburban/rural skew to larger vehicles."
+  },
+  {
+    "industryId": "renewable-energy",
+    "customerSegments": [
+      { "name": "Utilities and IPPs", "type": "B2B", "share": 70 },
+      { "name": "Commercial/industrial", "type": "B2B", "share": 20 },
+      { "name": "Residential prosumers", "type": "B2C", "share": 10 }
+    ],
+    "regions": [
+      { "name": "Europe", "importance": "High" },
+      { "name": "North America", "importance": "High" },
+      { "name": "Asia-Pacific", "importance": "High" }
+    ],
+    "notes": "Policy-driven demand with rising distributed generation adoption."
+  },
+  {
+    "industryId": "fintech",
+    "customerSegments": [
+      { "name": "Consumers", "type": "B2C", "share": 45 },
+      { "name": "SMBs", "type": "B2B", "share": 40 },
+      { "name": "Enterprises/partners", "type": "B2B", "share": 15 }
+    ],
+    "regions": [
+      { "name": "North America", "importance": "High" },
+      { "name": "Europe", "importance": "Medium" },
+      { "name": "Asia-Pacific", "importance": "High" },
+      { "name": "Latin America", "importance": "Medium" }
+    ],
+    "notes": "Mobile-first demand; underbanked populations drive growth in emerging markets."
+  },
+  {
+    "industryId": "e-commerce",
+    "customerSegments": [
+      { "name": "Consumers", "type": "B2C", "share": 80 },
+      { "name": "SMB sellers", "type": "B2B", "share": 20 }
+    ],
+    "regions": [
+      { "name": "North America", "importance": "High" },
+      { "name": "Europe", "importance": "High" },
+      { "name": "Asia-Pacific", "importance": "High" }
+    ],
+    "notes": "Mobile penetration drives growth; rising cross-border commerce."
+  },
+  {
+    "industryId": "saas",
+    "customerSegments": [
+      { "name": "Enterprises", "type": "B2B", "share": 45 },
+      { "name": "SMBs", "type": "B2B", "share": 45 },
+      { "name": "Developers/individuals", "type": "B2C", "share": 10 }
+    ],
+    "regions": [
+      { "name": "North America", "importance": "High" },
+      { "name": "Europe", "importance": "Medium" },
+      { "name": "Asia-Pacific", "importance": "Medium" }
+    ],
+    "notes": "High digital adoption; budgets sensitive to macro cycles."
+  },
+  {
+    "industryId": "pharmaceuticals",
+    "customerSegments": [
+      { "name": "Hospitals/health systems", "type": "B2B", "share": 50 },
+      { "name": "Pharmacies/distributors", "type": "B2B", "share": 30 },
+      { "name": "Government/payers", "type": "Government", "share": 20 }
+    ],
+    "regions": [
+      { "name": "North America", "importance": "High" },
+      { "name": "Europe", "importance": "High" },
+      { "name": "Asia-Pacific", "importance": "Medium" }
+    ],
+    "notes": "Payer mix and reimbursement drive affordability and access."
+  },
+  {
+    "industryId": "transportation-logistics",
+    "customerSegments": [
+      { "name": "Retail/e-commerce", "type": "B2B", "share": 35 },
+      { "name": "Industrial/manufacturing", "type": "B2B", "share": 35 },
+      { "name": "Automotive", "type": "B2B", "share": 10 },
+      { "name": "Other", "type": "B2B", "share": 20 }
+    ],
+    "regions": [
+      { "name": "North America", "importance": "High" },
+      { "name": "Europe", "importance": "High" },
+      { "name": "Asia-Pacific", "importance": "High" }
+    ],
+    "notes": "Trade flows and inventory cycles drive volumes."
+  }
+]

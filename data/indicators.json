@@ -1,0 +1,99 @@
+[
+  {
+    "industryId": "automotive",
+    "leadingIndicators": [
+      { "name": "New vehicle orders", "description": "Retail and fleet order books", "rationale": "Precedes wholesale shipments", "category": "Demand", "proxy": "OEM order backlog" },
+      { "name": "Dealer days’ supply", "description": "Inventory-to-sales ratio", "rationale": "Signals pricing power and incentives", "category": "Supply", "proxy": "Days on lot" },
+      { "name": "Auto loan approvals", "description": "Credit availability for buyers", "rationale": "Financing drives big-ticket purchases", "category": "Financial", "proxy": "Approval rates/interest" },
+      { "name": "EV search trends", "description": "Consumer interest in EVs", "rationale": "Leads mix shifts", "category": "Sentiment", "proxy": "Search volume" }
+    ],
+    "laggingIndicators": [
+      { "name": "Vehicle registrations", "description": "Actual sales completions", "rationale": "Reflect realized demand", "category": "Financial" },
+      { "name": "Average transaction price", "description": "Blended selling price", "rationale": "Adjusts after demand shifts", "category": "Financial" },
+      { "name": "Aftermarket revenue", "description": "Parts and service", "rationale": "Tracks installed base aging", "category": "Financial" }
+    ]
+  },
+  {
+    "industryId": "renewable-energy",
+    "leadingIndicators": [
+      { "name": "Interconnection queues", "description": "MW waiting for grid connection", "rationale": "Signals future build-out", "category": "Supply" },
+      { "name": "PPA/auction awards", "description": "Contracted capacity", "rationale": "Locks in future revenue", "category": "Demand" },
+      { "name": "Module/turbine pricing", "description": "Equipment cost curves", "rationale": "Drives project economics", "category": "Supply" },
+      { "name": "Financing spreads", "description": "Cost of project capital", "rationale": "Determines feasibility", "category": "Financial" }
+    ],
+    "laggingIndicators": [
+      { "name": "Commissioned capacity", "description": "MW added to grid", "rationale": "Realized supply after build", "category": "Supply" },
+      { "name": "Capacity factors", "description": "Actual output vs rating", "rationale": "Performance after operations", "category": "Financial" },
+      { "name": "Realized PPA revenue", "description": "Cash flows from contracts", "rationale": "Trails award/energization", "category": "Financial" }
+    ]
+  },
+  {
+    "industryId": "fintech",
+    "leadingIndicators": [
+      { "name": "New user onboarding", "description": "Gross adds to platform", "rationale": "Drives future TPV and revenue", "category": "Demand" },
+      { "name": "TPV growth (forward bookings)", "description": "Total payment volume pipeline", "rationale": "Translates to take-rate revenue", "category": "Financial" },
+      { "name": "Credit approval funnel", "description": "Applications and approvals", "rationale": "Leads loan book growth", "category": "Financial" },
+      { "name": "Fraud signals", "description": "Chargeback and fraud attempts", "rationale": "Precedes loss spikes", "category": "Sentiment" }
+    ],
+    "laggingIndicators": [
+      { "name": "Net revenue", "description": "Realized take rates and fees", "rationale": "Follows volumes", "category": "Financial" },
+      { "name": "Credit losses", "description": "Charge-offs and delinquencies", "rationale": "Manifest after origination", "category": "Financial" },
+      { "name": "Cohort retention/ARPU", "description": "Revenue per active user", "rationale": "Reflects past activation", "category": "Financial" }
+    ]
+  },
+  {
+    "industryId": "e-commerce",
+    "leadingIndicators": [
+      { "name": "Site traffic and conversion intent", "description": "Sessions, cart adds", "rationale": "Precedes orders", "category": "Demand" },
+      { "name": "Seller onboarding", "description": "Active sellers/listings", "rationale": "Expands assortment ahead of GMV", "category": "Supply" },
+      { "name": "Ad spend budgets", "description": "Brand performance spend", "rationale": "Drives traffic and GMV", "category": "Financial" },
+      { "name": "Logistics SLA performance", "description": "On-time delivery projections", "rationale": "Impacts conversion and retention", "category": "Supply" }
+    ],
+    "laggingIndicators": [
+      { "name": "GMV and take rate", "description": "Gross merchandise volume", "rationale": "Reflects realized sales", "category": "Financial" },
+      { "name": "Return rates", "description": "Percentage of orders returned", "rationale": "Realized after shipment", "category": "Financial" },
+      { "name": "Fulfillment cost per order", "description": "Unit economics", "rationale": "Measured after operations", "category": "Financial" }
+    ]
+  },
+  {
+    "industryId": "saas",
+    "leadingIndicators": [
+      { "name": "Pipeline and bookings", "description": "Sales pipeline and new ARR", "rationale": "Precedes revenue recognition", "category": "Demand" },
+      { "name": "Trial-to-paid conversion", "description": "Activation rates", "rationale": "Signals future ARR", "category": "Demand" },
+      { "name": "Net dollar retention (forward view)", "description": "Expansion and churn intent", "rationale": "Predicts ARR trajectory", "category": "Financial" },
+      { "name": "Product usage depth", "description": "Feature adoption and usage", "rationale": "Leads renewals/expansion", "category": "Sentiment" }
+    ],
+    "laggingIndicators": [
+      { "name": "GAAP revenue", "description": "Recognized subscription revenue", "rationale": "Lags bookings", "category": "Financial" },
+      { "name": "Gross margin", "description": "COGS vs revenue", "rationale": "Reflects past infra efficiencies", "category": "Financial" },
+      { "name": "Churn rate", "description": "Customer/logo churn", "rationale": "Observed after period end", "category": "Financial" }
+    ]
+  },
+  {
+    "industryId": "pharmaceuticals",
+    "leadingIndicators": [
+      { "name": "Clinical trial progress", "description": "Phase transitions", "rationale": "Signals pipeline probability", "category": "Demand" },
+      { "name": "Regulatory designations", "description": "Fast track/priority review", "rationale": "Shortens approval timeline", "category": "Political" },
+      { "name": "Prescription intent surveys", "description": "Physician adoption intent", "rationale": "Leads uptake at launch", "category": "Sentiment" }
+    ],
+    "laggingIndicators": [
+      { "name": "Script volumes", "description": "Prescriptions filled", "rationale": "Reflects realized demand", "category": "Financial" },
+      { "name": "Revenue and gross-to-net", "description": "Net sales after discounts", "rationale": "Reported post-market", "category": "Financial" },
+      { "name": "Safety/AE reports", "description": "Adverse events", "rationale": "Observed after usage", "category": "Supply" }
+    ]
+  },
+  {
+    "industryId": "transportation-logistics",
+    "leadingIndicators": [
+      { "name": "Freight bookings and tenders", "description": "Load tenders volume", "rationale": "Precedes haulage", "category": "Demand" },
+      { "name": "Spot vs contract rates", "description": "Rate trend", "rationale": "Signals capacity tightness", "category": "Financial" },
+      { "name": "Inventory-to-sales ratios", "description": "Shipper stock levels", "rationale": "Drive replenishment freight", "category": "Demand" },
+      { "name": "Diesel prices", "description": "Fuel cost trend", "rationale": "Impacts surcharges and demand", "category": "Financial" }
+    ],
+    "laggingIndicators": [
+      { "name": "Realized freight revenue", "description": "Haulage income", "rationale": "After loads executed", "category": "Financial" },
+      { "name": "Operating ratio", "description": "Expenses vs revenue", "rationale": "Reflects past efficiency", "category": "Financial" },
+      { "name": "Capacity utilization", "description": "Fleet usage", "rationale": "Measured after deployment", "category": "Supply" }
+    ]
+  }
+]

@@ -1,0 +1,1413 @@
+[
+  {
+    "id": "automotive",
+    "name": "Automotive",
+    "category": "Manufacturing",
+    "description": "Design and assembly of vehicles; shifting to EVs and software-defined platforms.",
+    "businessModels": ["Vehicle sales", "Leasing/financing", "Aftermarket service", "Software features"],
+    "revenueDrivers": ["Unit sales", "Financing income", "Service parts", "Software attach"],
+    "costDrivers": ["Materials", "Battery/energy components", "Labor", "Logistics"],
+    "valueChain": [
+      { "stage": "Raw materials", "description": "Metals, chemicals, batteries", "marginProfile": "Low" },
+      { "stage": "Tiered suppliers", "description": "Components and modules", "marginProfile": "Medium" },
+      { "stage": "Assembly", "description": "OEM manufacturing and integration", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Dealers/direct, financing", "marginProfile": "Medium" },
+      { "stage": "Aftermarket", "description": "Service, parts, software", "marginProfile": "High" }
+    ],
+    "segments": ["Passenger vehicles", "Commercial vehicles", "EVs", "Connected/ADAS"]
+  },
+  {
+    "id": "oil-gas-exploration-production",
+    "name": "Oil and Gas Exploration and Production",
+    "category": "Energy",
+    "description": "Upstream exploration, drilling, and production of hydrocarbons.",
+    "businessModels": ["Resource extraction", "Joint ventures", "Production sharing"],
+    "revenueDrivers": ["Commodity prices", "Production volumes", "Lifting costs"],
+    "costDrivers": ["Capex drilling", "Services", "Royalties", "Logistics"],
+    "valueChain": [
+      { "stage": "Exploration", "description": "Seismic, leasing, appraisal", "marginProfile": "Low" },
+      { "stage": "Development", "description": "Drilling and completions", "marginProfile": "Medium" },
+      { "stage": "Production", "description": "Operations and lifting", "marginProfile": "Medium" },
+      { "stage": "Marketing", "description": "Transport to midstream", "marginProfile": "Medium" }
+    ],
+    "segments": ["Onshore", "Offshore", "Unconventional"]
+  },
+  {
+    "id": "pharmaceuticals",
+    "name": "Pharmaceuticals",
+    "category": "Healthcare",
+    "description": "Discovery, development, manufacturing, and commercialization of drugs.",
+    "businessModels": ["R&D driven", "Licensing", "Branded and generics"],
+    "revenueDrivers": ["Drug sales", "Licensing fees", "Royalties"],
+    "costDrivers": ["R&D", "Clinical trials", "Manufacturing", "Compliance"],
+    "valueChain": [
+      { "stage": "Discovery", "description": "Preclinical research", "marginProfile": "Low" },
+      { "stage": "Clinical", "description": "Trials phases I-III", "marginProfile": "Low" },
+      { "stage": "Approval", "description": "Regulatory filings", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "API and formulation", "marginProfile": "Medium" },
+      { "stage": "Commercial", "description": "Marketing, distribution", "marginProfile": "High" }
+    ],
+    "segments": ["Small molecule", "Biologics", "Vaccines", "Generics"]
+  },
+  {
+    "id": "telecommunications",
+    "name": "Telecommunications",
+    "category": "Infrastructure",
+    "description": "Provision of mobile, broadband, and enterprise connectivity services.",
+    "businessModels": ["Subscription", "Usage-based", "Wholesale access"],
+    "revenueDrivers": ["Subscriber growth", "ARPU", "Wholesale"],
+    "costDrivers": ["Network capex", "Spectrum", "Customer acquisition"],
+    "valueChain": [
+      { "stage": "Spectrum", "description": "Licensing and auctions", "marginProfile": "Low" },
+      { "stage": "Network build", "description": "RAN/core/fiber deployment", "marginProfile": "Low" },
+      { "stage": "Service delivery", "description": "Connectivity and SLAs", "marginProfile": "Medium" },
+      { "stage": "Devices/CP", "description": "CPE, bundling", "marginProfile": "Medium" }
+    ],
+    "segments": ["Mobile", "Fixed broadband", "Enterprise services"]
+  },
+  {
+    "id": "electronics",
+    "name": "Electronics",
+    "category": "Manufacturing",
+    "description": "Design and assembly of consumer and industrial electronic devices.",
+    "businessModels": ["Product sales", "OEM/ODM", "Aftermarket accessories"],
+    "revenueDrivers": ["Volume", "ASP mix", "Channel reach"],
+    "costDrivers": ["Components", "Manufacturing", "Distribution"],
+    "valueChain": [
+      { "stage": "Design", "description": "R&D and product definition", "marginProfile": "High" },
+      { "stage": "Component sourcing", "description": "Chips, optics, materials", "marginProfile": "Low" },
+      { "stage": "Assembly/ODM", "description": "Manufacturing partners", "marginProfile": "Medium" },
+      { "stage": "Channels", "description": "Retail/online distribution", "marginProfile": "Medium" }
+    ],
+    "segments": ["Consumer devices", "Industrial electronics", "Components"]
+  },
+  {
+    "id": "agriculture",
+    "name": "Agriculture",
+    "category": "Primary",
+    "description": "Crop and livestock production with rising agtech adoption.",
+    "businessModels": ["Commodity sales", "Contract farming", "Co-ops"],
+    "revenueDrivers": ["Yields", "Commodity prices", "Export demand"],
+    "costDrivers": ["Inputs", "Labor", "Logistics"],
+    "valueChain": [
+      { "stage": "Inputs", "description": "Seeds, fertilizers, equipment", "marginProfile": "Low" },
+      { "stage": "Production", "description": "Farming operations", "marginProfile": "Medium" },
+      { "stage": "Processing", "description": "Primary processing/storage", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Wholesale/export", "marginProfile": "Medium" }
+    ],
+    "segments": ["Row crops", "High-value crops", "Livestock"]
+  },
+  {
+    "id": "chemicals",
+    "name": "Chemicals",
+    "category": "Manufacturing",
+    "description": "Base and specialty chemicals for industrial and consumer uses.",
+    "businessModels": ["Commodity production", "Specialty formulations", "Contract manufacturing"],
+    "revenueDrivers": ["Volumes", "Pricing", "Mix"],
+    "costDrivers": ["Feedstocks", "Energy", "Logistics"],
+    "valueChain": [
+      { "stage": "Feedstocks", "description": "Oil/gas/biobased inputs", "marginProfile": "Low" },
+      { "stage": "Processing", "description": "Cracking, synthesis", "marginProfile": "Medium" },
+      { "stage": "Formulation", "description": "Blends and specialties", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Industrial channels", "marginProfile": "Medium" }
+    ],
+    "segments": ["Basic chemicals", "Specialty", "Agrochemicals"]
+  },
+  {
+    "id": "mining",
+    "name": "Mining",
+    "category": "Primary",
+    "description": "Extraction of mineral resources including metals and ores.",
+    "businessModels": ["Resource extraction", "Royalty/streaming", "JV"],
+    "revenueDrivers": ["Commodity prices", "Grades", "Volumes"],
+    "costDrivers": ["Capex", "Energy", "Labor", "Logistics"],
+    "valueChain": [
+      { "stage": "Exploration", "description": "Prospecting and permits", "marginProfile": "Low" },
+      { "stage": "Development", "description": "Mine construction", "marginProfile": "Low" },
+      { "stage": "Extraction", "description": "Mining and processing", "marginProfile": "Medium" },
+      { "stage": "Marketing", "description": "Transport and sales", "marginProfile": "Medium" }
+    ],
+    "segments": ["Bulk", "Base metals", "Precious metals"]
+  },
+  {
+    "id": "food-beverage",
+    "name": "Food & Beverage",
+    "category": "Consumer",
+    "description": "Production and distribution of packaged foods and drinks.",
+    "businessModels": ["CPG brands", "Private label", "Foodservice supply"],
+    "revenueDrivers": ["Volume", "Pricing", "Brand mix"],
+    "costDrivers": ["Ingredients", "Packaging", "Logistics", "Marketing"],
+    "valueChain": [
+      { "stage": "Ingredients", "description": "Sourcing commodities", "marginProfile": "Low" },
+      { "stage": "Processing", "description": "Manufacturing and QA", "marginProfile": "Medium" },
+      { "stage": "Branding", "description": "Positioning and marketing", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail/foodservice channels", "marginProfile": "Medium" }
+    ],
+    "segments": ["Packaged foods", "Beverages", "Foodservice supply"]
+  },
+  {
+    "id": "education",
+    "name": "Education",
+    "category": "Services",
+    "description": "Institutions and platforms delivering learning; mix of public, private, and digital.",
+    "businessModels": ["Tuition", "Government funding", "Edtech subscriptions"],
+    "revenueDrivers": ["Enrollment", "ARPU", "Retention"],
+    "costDrivers": ["Faculty/talent", "Content development", "Facilities/tech"],
+    "valueChain": [
+      { "stage": "Curriculum", "description": "Content and accreditation", "marginProfile": "Medium" },
+      { "stage": "Delivery", "description": "On-campus and online instruction", "marginProfile": "Medium" },
+      { "stage": "Assessment", "description": "Testing and certification", "marginProfile": "Medium" }
+    ],
+    "segments": ["K-12", "Higher ed", "Vocational", "Corporate learning"]
+  },
+  {
+    "id": "transportation-logistics",
+    "name": "Transportation and Logistics",
+    "category": "Services",
+    "description": "Movement of goods via road, air, ocean, and supporting warehousing.",
+    "businessModels": ["Contract logistics", "Asset-based transport", "Brokerage", "3PL/4PL"],
+    "revenueDrivers": ["Freight rates", "Volumes", "Utilization"],
+    "costDrivers": ["Fuel", "Labor", "Equipment", "Insurance"],
+    "valueChain": [
+      { "stage": "Planning", "description": "Network design, brokerage", "marginProfile": "Medium" },
+      { "stage": "Linehaul", "description": "Road/rail/air/ocean transport", "marginProfile": "Low" },
+      { "stage": "Warehousing", "description": "Storage, fulfillment", "marginProfile": "Medium" },
+      { "stage": "Last mile", "description": "Final delivery", "marginProfile": "Low" }
+    ],
+    "segments": ["Parcel", "LTL/FTL", "Ocean/air", "Warehousing"]
+  },
+  {
+    "id": "utilities",
+    "name": "Utilities (Electricity, Water, Waste Management)",
+    "category": "Infrastructure",
+    "description": "Regulated provision of power, water, and waste services.",
+    "businessModels": ["Regulated rate base", "PPAs", "Service contracts"],
+    "revenueDrivers": ["Regulated returns", "Volume demand", "Tariffs"],
+    "costDrivers": ["Capex", "Fuel", "Maintenance", "Compliance"],
+    "valueChain": [
+      { "stage": "Generation/collection", "description": "Power/water/waste intake", "marginProfile": "Medium" },
+      { "stage": "Transmission", "description": "Pipelines/grids", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Local delivery", "marginProfile": "Medium" },
+      { "stage": "Retail/service", "description": "Customer billing and ops", "marginProfile": "Medium" }
+    ],
+    "segments": ["Electric", "Water", "Waste"]
+  },
+  {
+    "id": "hospitality-tourism",
+    "name": "Hospitality and Tourism",
+    "category": "Consumer",
+    "description": "Lodging, travel experiences, and related services.",
+    "businessModels": ["Room revenue", "Franchise/management fees", "Experiences"],
+    "revenueDrivers": ["Occupancy", "ADR", "RevPAR", "Ancillary spend"],
+    "costDrivers": ["Labor", "Property", "Distribution/OTAs"],
+    "valueChain": [
+      { "stage": "Development", "description": "Property development", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Hotel and experience delivery", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Direct and OTA channels", "marginProfile": "Medium" }
+    ],
+    "segments": ["Hotels", "Short-term rentals", "Experiences", "Travel services"]
+  },
+  {
+    "id": "professional-services",
+    "name": "Professional Services (Legal, Consulting)",
+    "category": "Services",
+    "description": "Expert advisory and execution services.",
+    "businessModels": ["Hourly billing", "Retainers", "Outcomes-based"],
+    "revenueDrivers": ["Utilization", "Rate card", "Client retention"],
+    "costDrivers": ["Talent", "BD/sales", "Knowledge tools"],
+    "valueChain": [
+      { "stage": "Business development", "description": "Sales and scoping", "marginProfile": "Medium" },
+      { "stage": "Delivery", "description": "Project execution", "marginProfile": "Medium" },
+      { "stage": "Support", "description": "Knowledge management", "marginProfile": "Medium" }
+    ],
+    "segments": ["Legal", "Strategy", "IT/implementation"]
+  },
+  {
+    "id": "insurance",
+    "name": "Insurance",
+    "category": "Financial",
+    "description": "Risk pooling products across P&C, life, and health.",
+    "businessModels": ["Premium underwriting", "Reinsurance", "Distribution commissions"],
+    "revenueDrivers": ["Premium volume", "Investment income", "Retention"],
+    "costDrivers": ["Claims", "Loss adjustment", "Acquisition", "Reinsurance"],
+    "valueChain": [
+      { "stage": "Distribution", "description": "Agents, brokers, direct", "marginProfile": "Medium" },
+      { "stage": "Underwriting", "description": "Risk selection and pricing", "marginProfile": "Medium" },
+      { "stage": "Claims", "description": "Administration and payouts", "marginProfile": "Low" },
+      { "stage": "Investments", "description": "Float management", "marginProfile": "Medium" }
+    ],
+    "segments": ["P&C", "Life", "Health", "Reinsurance"]
+  },
+  {
+    "id": "aerospace-defense",
+    "name": "Aerospace and Defense",
+    "category": "Manufacturing",
+    "description": "Aircraft, spacecraft, and defense systems with long program cycles.",
+    "businessModels": ["Program sales", "Service/maintenance", "Gov contracts"],
+    "revenueDrivers": ["Backlog", "Deliveries", "Aftermarket"],
+    "costDrivers": ["R&D", "Materials", "Compliance"],
+    "valueChain": [
+      { "stage": "Design", "description": "Program R&D", "marginProfile": "Medium" },
+      { "stage": "Production", "description": "Assembly and integration", "marginProfile": "Medium" },
+      { "stage": "Support", "description": "MRO and upgrades", "marginProfile": "High" }
+    ],
+    "segments": ["Commercial aero", "Defense", "Space systems"]
+  },
+  {
+    "id": "consumer-goods",
+    "name": "Consumer Goods",
+    "category": "Consumer",
+    "description": "Broad set of packaged goods serving households.",
+    "businessModels": ["Brand retail", "Wholesale", "E-commerce D2C"],
+    "revenueDrivers": ["Volume", "Pricing", "Channel mix"],
+    "costDrivers": ["Materials", "Marketing", "Distribution"],
+    "valueChain": [
+      { "stage": "Design", "description": "Product and brand development", "marginProfile": "High" },
+      { "stage": "Manufacturing", "description": "Production and packaging", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail and online channels", "marginProfile": "Medium" }
+    ],
+    "segments": ["Household", "Personal care", "Durables"]
+  },
+  {
+    "id": "media-entertainment",
+    "name": "Media and Entertainment",
+    "category": "Digital",
+    "description": "Content creation and distribution across TV, film, gaming, and streaming.",
+    "businessModels": ["Advertising", "Subscription", "Licensing", "Ticketing"],
+    "revenueDrivers": ["Audience", "Ad CPMs", "Subs ARPU", "IP licensing"],
+    "costDrivers": ["Content production", "Marketing", "Platform tech"],
+    "valueChain": [
+      { "stage": "Creation", "description": "IP and production", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Broadcast, streaming, theaters", "marginProfile": "Medium" },
+      { "stage": "Monetization", "description": "Ads, subs, licensing", "marginProfile": "Medium" }
+    ],
+    "segments": ["Streaming", "Gaming", "Film/TV", "Live events"]
+  },
+  {
+    "id": "renewable-energy",
+    "name": "Renewable Energy",
+    "category": "Energy",
+    "description": "Generation and integration of wind, solar, hydro, and storage assets.",
+    "businessModels": ["IPP/PPA", "Build-own-operate", "EPC", "Asset finance"],
+    "revenueDrivers": ["PPA rates", "Capacity factors", "Incentives"],
+    "costDrivers": ["Capex", "Financing costs", "O&M"],
+    "valueChain": [
+      { "stage": "Development", "description": "Site, permits, interconnect", "marginProfile": "Medium" },
+      { "stage": "EPC", "description": "Construction and balance of plant", "marginProfile": "Low" },
+      { "stage": "Ownership", "description": "Operations and trading", "marginProfile": "Medium" }
+    ],
+    "segments": ["Utility-scale", "Distributed", "Storage"]
+  },
+  {
+    "id": "textiles-apparel",
+    "name": "Textiles and Apparel",
+    "category": "Manufacturing",
+    "description": "Production of fabrics and garments for retail and wholesale.",
+    "businessModels": ["Brand retail", "OEM/ODM", "Fast fashion"],
+    "revenueDrivers": ["Volume", "Brand mix", "Seasonal drops"],
+    "costDrivers": ["Materials", "Labor", "Logistics", "Markdowns"],
+    "valueChain": [
+      { "stage": "Design", "description": "Trends and product design", "marginProfile": "High" },
+      { "stage": "Manufacturing", "description": "Cut-and-sew, knitting", "marginProfile": "Low" },
+      { "stage": "Distribution", "description": "Wholesale/retail/e-comm", "marginProfile": "Medium" }
+    ],
+    "segments": ["Mass market", "Premium", "Athleisure"]
+  },
+  {
+    "id": "forestry-paper-products",
+    "name": "Forestry and Paper Products",
+    "category": "Primary",
+    "description": "Timber cultivation and conversion to pulp, paper, and board.",
+    "businessModels": ["Timber sales", "Pulp/paper manufacturing", "Recycling"],
+    "revenueDrivers": ["Pulp prices", "Packaging demand", "Construction"],
+    "costDrivers": ["Forest management", "Energy", "Chemicals"],
+    "valueChain": [
+      { "stage": "Forestry", "description": "Planting and harvesting", "marginProfile": "Low" },
+      { "stage": "Processing", "description": "Pulping and papermaking", "marginProfile": "Medium" },
+      { "stage": "Conversion", "description": "Packaging/printing", "marginProfile": "Medium" }
+    ],
+    "segments": ["Pulp", "Paper", "Packaging board"]
+  },
+  {
+    "id": "commercial-services-supplies",
+    "name": "Commercial Services and Supplies",
+    "category": "Services",
+    "description": "B2B outsourced services and consumables.",
+    "businessModels": ["Contract service", "Consumable sales", "Leasing"],
+    "revenueDrivers": ["Contract volumes", "Retention", "Cross-sell"],
+    "costDrivers": ["Labor", "Materials", "Logistics"],
+    "valueChain": [
+      { "stage": "Sales", "description": "Contracting and bids", "marginProfile": "Medium" },
+      { "stage": "Service delivery", "description": "On-site operations", "marginProfile": "Medium" },
+      { "stage": "Support", "description": "Customer success/billing", "marginProfile": "Medium" }
+    ],
+    "segments": ["Facilities", "Uniforms", "B2B consumables"]
+  },
+  {
+    "id": "industrial-machinery",
+    "name": "Industrial Machinery",
+    "category": "Manufacturing",
+    "description": "Equipment for manufacturing, construction, and processing industries.",
+    "businessModels": ["Equipment sales", "Leasing", "Aftermarket parts"],
+    "revenueDrivers": ["Capex cycles", "Aftermarket", "Utilization"],
+    "costDrivers": ["Materials", "R&D", "Distribution"],
+    "valueChain": [
+      { "stage": "Design", "description": "Engineering and prototyping", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Assembly and QA", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Dealers and rental", "marginProfile": "Medium" },
+      { "stage": "Aftermarket", "description": "Parts/service", "marginProfile": "High" }
+    ],
+    "segments": ["Construction", "Process equipment", "Automation"]
+  },
+  {
+    "id": "packaging",
+    "name": "Packaging",
+    "category": "Manufacturing",
+    "description": "Production of packaging materials and solutions.",
+    "businessModels": ["Material supply", "Custom solutions", "Recycling"],
+    "revenueDrivers": ["Volume", "Material mix", "Value-add"],
+    "costDrivers": ["Raw materials", "Energy", "Transport"],
+    "valueChain": [
+      { "stage": "Materials", "description": "Paper/plastic/glass/metal", "marginProfile": "Low" },
+      { "stage": "Conversion", "description": "Forming and printing", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "To CPG/industrial", "marginProfile": "Medium" }
+    ],
+    "segments": ["Flexible", "Rigid", "Corrugated"]
+  },
+  {
+    "id": "metals-mining",
+    "name": "Metals and Mining",
+    "category": "Primary",
+    "description": "Extraction and processing of metallic minerals.",
+    "businessModels": ["Mining", "Smelting/refining", "Streaming"],
+    "revenueDrivers": ["Commodity prices", "Grades", "Volumes"],
+    "costDrivers": ["Energy", "Labor", "Logistics", "Capex"],
+    "valueChain": [
+      { "stage": "Mining", "description": "Extraction", "marginProfile": "Medium" },
+      { "stage": "Processing", "description": "Concentration/refining", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Sales to industrials", "marginProfile": "Medium" }
+    ],
+    "segments": ["Iron ore", "Copper", "Aluminum", "Precious"]
+  },
+  {
+    "id": "marine",
+    "name": "Marine",
+    "category": "Transportation",
+    "description": "Marine transport services and vessels.",
+    "businessModels": ["Charters", "Ticketing", "Freight services"],
+    "revenueDrivers": ["Day rates", "Utilization", "Routes"],
+    "costDrivers": ["Fuel", "Crew", "Maintenance"],
+    "valueChain": [
+      { "stage": "Fleet", "description": "Vessel ownership/lease", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Voyage management", "marginProfile": "Medium" },
+      { "stage": "Port services", "description": "Docking, handling", "marginProfile": "Medium" }
+    ],
+    "segments": ["Passenger", "Cargo", "Offshore support"]
+  },
+  {
+    "id": "railroads",
+    "name": "Railroads",
+    "category": "Transportation",
+    "description": "Rail freight and passenger services.",
+    "businessModels": ["Freight haulage", "Passenger tickets", "Intermodal"],
+    "revenueDrivers": ["Volume", "Yield", "Network efficiency"],
+    "costDrivers": ["Fuel", "Labor", "Track maintenance"],
+    "valueChain": [
+      { "stage": "Infrastructure", "description": "Track and signaling", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Train operations", "marginProfile": "Medium" },
+      { "stage": "Intermodal", "description": "Terminals and drayage", "marginProfile": "Medium" }
+    ],
+    "segments": ["Bulk", "Intermodal", "Passenger"]
+  },
+  {
+    "id": "air-transportation",
+    "name": "Air Transportation",
+    "category": "Transportation",
+    "description": "Airlines providing passenger and cargo services.",
+    "businessModels": ["Ticketing", "Cargo", "Ancillaries", "Loyalty"],
+    "revenueDrivers": ["Load factor", "Yield", "Ancillary attach"],
+    "costDrivers": ["Fuel", "Labor", "Maintenance", "Airport fees"],
+    "valueChain": [
+      { "stage": "Network", "description": "Fleet and route planning", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Flight operations", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Direct and OTA", "marginProfile": "Medium" }
+    ],
+    "segments": ["Full service", "Low-cost", "Cargo"]
+  },
+  {
+    "id": "space-industry",
+    "name": "Space Industry",
+    "category": "Aerospace",
+    "description": "Launch services, satellites, and downstream applications.",
+    "businessModels": ["Launch services", "Constellations", "Data-as-a-service"],
+    "revenueDrivers": ["Launch cadence", "Payload demand", "Data contracts"],
+    "costDrivers": ["R&D", "Capex", "Launch ops"],
+    "valueChain": [
+      { "stage": "Launch systems", "description": "Rockets and integration", "marginProfile": "Low" },
+      { "stage": "Spacecraft", "description": "Satellites/payloads", "marginProfile": "Medium" },
+      { "stage": "Ground/data", "description": "Ground stations and apps", "marginProfile": "Medium" }
+    ],
+    "segments": ["Launch", "Earth observation", "Connectivity"]
+  },
+  {
+    "id": "biotechnology",
+    "name": "Biotechnology",
+    "category": "Healthcare",
+    "description": "Biologic R&D platforms and therapeutics.",
+    "businessModels": ["Platform licensing", "Drug development", "Partnerships"],
+    "revenueDrivers": ["Milestones", "Royalties", "Approvals"],
+    "costDrivers": ["R&D", "Clinical trials", "Manufacturing scale-up"],
+    "valueChain": [
+      { "stage": "Discovery", "description": "Platforms and candidates", "marginProfile": "Low" },
+      { "stage": "Clinical", "description": "Trials and validation", "marginProfile": "Low" },
+      { "stage": "Commercial", "description": "Manufacturing and launch", "marginProfile": "Medium" }
+    ],
+    "segments": ["Therapeutics", "Tools", "Diagnostics"]
+  },
+  {
+    "id": "information-services",
+    "name": "Information Services",
+    "category": "Digital",
+    "description": "Data, analytics, and content services for enterprises and consumers.",
+    "businessModels": ["Subscriptions", "Licensing", "Ads"],
+    "revenueDrivers": ["Subscriber base", "Data value", "Usage"],
+    "costDrivers": ["Data acquisition", "Infrastructure", "Sales"],
+    "valueChain": [
+      { "stage": "Data sourcing", "description": "Collect and normalize", "marginProfile": "Medium" },
+      { "stage": "Analytics", "description": "Modeling and enrichment", "marginProfile": "High" },
+      { "stage": "Delivery", "description": "APIs and UX", "marginProfile": "High" }
+    ],
+    "segments": ["Financial data", "Vertical info", "Consumer info"]
+  },
+  {
+    "id": "fishing-aquaculture",
+    "name": "Fishing and Aquaculture",
+    "category": "Primary",
+    "description": "Capture fisheries and farmed seafood production.",
+    "businessModels": ["Catch sales", "Farmed production", "Processing"],
+    "revenueDrivers": ["Catch volumes", "Species mix", "Export demand"],
+    "costDrivers": ["Fuel", "Feed", "Labor", "Logistics"],
+    "valueChain": [
+      { "stage": "Harvesting", "description": "Catch/farming", "marginProfile": "Low" },
+      { "stage": "Processing", "description": "Cleaning/packaging", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Cold chain/export", "marginProfile": "Medium" }
+    ],
+    "segments": ["Wild catch", "Aquaculture", "Processing"]
+  },
+  {
+    "id": "tobacco",
+    "name": "Tobacco",
+    "category": "Consumer",
+    "description": "Manufacture and distribution of tobacco and nicotine products.",
+    "businessModels": ["Product sales", "Brand licensing"],
+    "revenueDrivers": ["Volume", "Pricing", "Mix to reduced-risk"],
+    "costDrivers": ["Leaf procurement", "Excise taxes", "Marketing"],
+    "valueChain": [
+      { "stage": "Sourcing", "description": "Leaf and inputs", "marginProfile": "Low" },
+      { "stage": "Manufacturing", "description": "Production and QA", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Wholesale/retail", "marginProfile": "Medium" }
+    ],
+    "segments": ["Combustibles", "Vapor", "Oral"]
+  },
+  {
+    "id": "household-personal-products",
+    "name": "Household and Personal Products",
+    "category": "Consumer",
+    "description": "Everyday cleaning and personal care goods.",
+    "businessModels": ["Brand retail", "Wholesale", "E-commerce"],
+    "revenueDrivers": ["Volume", "Pricing", "Channel mix"],
+    "costDrivers": ["Ingredients", "Packaging", "Advertising"],
+    "valueChain": [
+      { "stage": "Formulation", "description": "Product development", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Production/QA", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail/e-comm", "marginProfile": "Medium" }
+    ],
+    "segments": ["Cleaning", "Personal care", "Hygiene"]
+  },
+  {
+    "id": "luxury-goods",
+    "name": "Luxury Goods",
+    "category": "Consumer",
+    "description": "High-end fashion, accessories, jewelry, and lifestyle products.",
+    "businessModels": ["Brand retail", "Wholesale", "Licensing"],
+    "revenueDrivers": ["Brand equity", "Pricing power", "Retail footprint"],
+    "costDrivers": ["Materials", "Craftsmanship", "Marketing"],
+    "valueChain": [
+      { "stage": "Design", "description": "Creative and brand", "marginProfile": "High" },
+      { "stage": "Production", "description": "Crafted manufacturing", "marginProfile": "Medium" },
+      { "stage": "Retail", "description": "Boutiques/e-comm", "marginProfile": "High" }
+    ],
+    "segments": ["Fashion", "Leather goods", "Watches/jewelry"]
+  },
+  {
+    "id": "publishing",
+    "name": "Publishing",
+    "category": "Media",
+    "description": "Print and digital publishing of books and periodicals.",
+    "businessModels": ["Retail sales", "Subscriptions", "Ads", "Licensing"],
+    "revenueDrivers": ["Circulation", "Digital subs", "Ad sales"],
+    "costDrivers": ["Content acquisition", "Printing", "Distribution"],
+    "valueChain": [
+      { "stage": "Content", "description": "Authoring and editing", "marginProfile": "Medium" },
+      { "stage": "Production", "description": "Printing/digital prep", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail/online", "marginProfile": "Medium" }
+    ],
+    "segments": ["Books", "Magazines", "Digital"]
+  },
+  {
+    "id": "sporting-goods",
+    "name": "Sporting Goods",
+    "category": "Consumer",
+    "description": "Equipment, apparel, and footwear for sports and fitness.",
+    "businessModels": ["Product sales", "Brand retail", "Wholesale"],
+    "revenueDrivers": ["Seasonality", "Brand strength", "DTC mix"],
+    "costDrivers": ["Materials", "Endorsements", "Logistics"],
+    "valueChain": [
+      { "stage": "Design", "description": "Performance R&D", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Production", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail/online", "marginProfile": "Medium" }
+    ],
+    "segments": ["Equipment", "Apparel", "Footwear"]
+  },
+  {
+    "id": "toys-games",
+    "name": "Toys and Games",
+    "category": "Consumer",
+    "description": "Physical and digital play products.",
+    "businessModels": ["Product sales", "Licensing", "Digital IAP"],
+    "revenueDrivers": ["Seasonal demand", "Licensing deals", "Digital monetization"],
+    "costDrivers": ["Manufacturing", "Licensing fees", "Marketing"],
+    "valueChain": [
+      { "stage": "Design", "description": "Concept and IP", "marginProfile": "High" },
+      { "stage": "Manufacturing", "description": "Production", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail/online", "marginProfile": "Medium" }
+    ],
+    "segments": ["Physical toys", "Board games", "Digital games"]
+  },
+  {
+    "id": "gambling",
+    "name": "Gambling",
+    "category": "Consumer",
+    "description": "Casinos, online betting, and lotteries.",
+    "businessModels": ["House take", "Platform fees", "Licensing"],
+    "revenueDrivers": ["Handle/turnover", "Hold rates", "User base"],
+    "costDrivers": ["Regulatory fees", "Marketing", "Compliance"],
+    "valueChain": [
+      { "stage": "Licensing", "description": "Permits and compliance", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Gaming operations/platforms", "marginProfile": "High" },
+      { "stage": "Distribution", "description": "Retail and digital", "marginProfile": "High" }
+    ],
+    "segments": ["Casinos", "Sports betting", "iGaming", "Lottery"]
+  },
+  {
+    "id": "art-auction",
+    "name": "Art and Auction",
+    "category": "Consumer",
+    "description": "Auction houses and marketplaces for art and collectibles.",
+    "businessModels": ["Commissions", "Private sales", "Financing"],
+    "revenueDrivers": ["GMV", "Take rate", "High-end consignments"],
+    "costDrivers": ["Marketing", "Expertise", "Events"],
+    "valueChain": [
+      { "stage": "Sourcing", "description": "Consignment and curation", "marginProfile": "Medium" },
+      { "stage": "Sales", "description": "Auctions and private sales", "marginProfile": "High" },
+      { "stage": "Services", "description": "Advisory, financing", "marginProfile": "High" }
+    ],
+    "segments": ["Auctions", "Online marketplaces", "Advisory"]
+  },
+  {
+    "id": "music-industry",
+    "name": "Music Industry",
+    "category": "Media",
+    "description": "Recorded music, publishing, live events, and streaming.",
+    "businessModels": ["Streaming royalties", "Licensing", "Live events"],
+    "revenueDrivers": ["Streaming MAUs", "ARPU", "Touring"],
+    "costDrivers": ["Artist royalties", "Marketing", "Production"],
+    "valueChain": [
+      { "stage": "Creation", "description": "Artists and production", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Streaming and retail", "marginProfile": "Medium" },
+      { "stage": "Monetization", "description": "Licensing/live/merch", "marginProfile": "Medium" }
+    ],
+    "segments": ["Recorded music", "Publishing", "Live"]
+  },
+  {
+    "id": "photography",
+    "name": "Photography",
+    "category": "Consumer",
+    "description": "Cameras, services, and stock imagery.",
+    "businessModels": ["Hardware sales", "Services", "Licensing"],
+    "revenueDrivers": ["Device sales", "Event bookings", "Stock licensing"],
+    "costDrivers": ["Hardware BOM", "Talent", "Marketing"],
+    "valueChain": [
+      { "stage": "Capture", "description": "Equipment and shooting", "marginProfile": "Medium" },
+      { "stage": "Processing", "description": "Editing and storage", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Print/online licensing", "marginProfile": "Medium" }
+    ],
+    "segments": ["Hardware", "Services", "Stock content"]
+  },
+  {
+    "id": "footwear",
+    "name": "Footwear",
+    "category": "Consumer",
+    "description": "Design and manufacture of shoes for sport and lifestyle.",
+    "businessModels": ["Brand retail", "Wholesale", "D2C"],
+    "revenueDrivers": ["Brand heat", "Seasonality", "Channel mix"],
+    "costDrivers": ["Materials", "Manufacturing", "Endorsements"],
+    "valueChain": [
+      { "stage": "Design", "description": "Performance and fashion design", "marginProfile": "High" },
+      { "stage": "Manufacturing", "description": "Production and QA", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail/e-comm", "marginProfile": "Medium" }
+    ],
+    "segments": ["Athletic", "Casual", "Luxury"]
+  },
+  {
+    "id": "cybersecurity",
+    "name": "Cybersecurity",
+    "category": "Digital",
+    "description": "Security software, hardware, and services protecting digital assets.",
+    "businessModels": ["Subscription", "Managed services", "Usage-based"],
+    "revenueDrivers": ["Seat/endpoint counts", "Adoption of new modules", "Usage"],
+    "costDrivers": ["R&D", "Cloud infra", "Sales/marketing"],
+    "valueChain": [
+      { "stage": "R&D", "description": "Threat research/platform", "marginProfile": "High" },
+      { "stage": "Delivery", "description": "Cloud/agent deployment", "marginProfile": "High" },
+      { "stage": "Services", "description": "MDR/SOC", "marginProfile": "Medium" }
+    ],
+    "segments": ["Network", "Endpoint", "Cloud", "Identity"]
+  },
+  {
+    "id": "data-centers-hosting",
+    "name": "Data Centers and Hosting Services",
+    "category": "Infrastructure",
+    "description": "Colocation, cloud hosting, and edge facilities.",
+    "businessModels": ["Colo leases", "Cloud services", "Interconnect"],
+    "revenueDrivers": ["Occupancy", "Power density", "Contract terms"],
+    "costDrivers": ["Power", "Cooling", "Capex", "Land"],
+    "valueChain": [
+      { "stage": "Site/Build", "description": "Land, power, construction", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Facility management", "marginProfile": "Medium" },
+      { "stage": "Services", "description": "Interconnect/cloud", "marginProfile": "High" }
+    ],
+    "segments": ["Retail colo", "Hyperscale", "Edge"]
+  },
+  {
+    "id": "e-commerce",
+    "name": "E-commerce",
+    "category": "Digital",
+    "description": "Online retail marketplaces and direct-to-consumer platforms.",
+    "businessModels": ["Marketplace take-rate", "1P retail", "Ads", "Subscriptions"],
+    "revenueDrivers": ["GMV", "Take rate", "Ad load", "Logistics efficiency"],
+    "costDrivers": ["Fulfillment", "Marketing", "Returns", "Payments"],
+    "valueChain": [
+      { "stage": "Merchandising", "description": "Sourcing and assortment", "marginProfile": "Medium" },
+      { "stage": "Platform", "description": "Catalog, search, payments", "marginProfile": "Medium" },
+      { "stage": "Logistics", "description": "Warehousing and delivery", "marginProfile": "Low" },
+      { "stage": "Customer", "description": "CX, loyalty, support", "marginProfile": "Medium" }
+    ],
+    "segments": ["Marketplace", "D2C brands", "Omnichannel"]
+  },
+  {
+    "id": "environmental-services-equipment",
+    "name": "Environmental Services and Equipment",
+    "category": "Services",
+    "description": "Waste, remediation, and environmental tech solutions.",
+    "businessModels": ["Service contracts", "Equipment sales", "Monitoring"],
+    "revenueDrivers": ["Regulatory demand", "Project volumes", "Equipment adoption"],
+    "costDrivers": ["Labor", "Equipment", "Compliance"],
+    "valueChain": [
+      { "stage": "Assessment", "description": "Testing and consulting", "marginProfile": "Medium" },
+      { "stage": "Execution", "description": "Remediation/collection", "marginProfile": "Medium" },
+      { "stage": "Monitoring", "description": "Ongoing services", "marginProfile": "Medium" }
+    ],
+    "segments": ["Waste", "Remediation", "Monitoring tech"]
+  },
+  {
+    "id": "executive-legislative-offices",
+    "name": "Executive and Legislative Offices, Combined",
+    "category": "Public Sector",
+    "description": "Government administration and policy bodies.",
+    "businessModels": ["Public funding"],
+    "revenueDrivers": ["Budget allocations"],
+    "costDrivers": ["Personnel", "Programs", "Facilities"],
+    "valueChain": [
+      { "stage": "Policy", "description": "Drafting and legislation", "marginProfile": "Low" },
+      { "stage": "Administration", "description": "Program execution", "marginProfile": "Low" }
+    ],
+    "segments": ["Federal", "State", "Local"]
+  },
+  {
+    "id": "facility-services",
+    "name": "Facility Services",
+    "category": "Services",
+    "description": "Maintenance, cleaning, and integrated facility management.",
+    "businessModels": ["Contracts", "Managed services"],
+    "revenueDrivers": ["Contract scope", "Retention", "Upsell"],
+    "costDrivers": ["Labor", "Supplies", "Equipment"],
+    "valueChain": [
+      { "stage": "Mobilization", "description": "Onboarding sites", "marginProfile": "Low" },
+      { "stage": "Service delivery", "description": "Ops and maintenance", "marginProfile": "Medium" },
+      { "stage": "Quality", "description": "Inspection and reporting", "marginProfile": "Medium" }
+    ],
+    "segments": ["Cleaning", "Maintenance", "Integrated FM"]
+  },
+  {
+    "id": "farming-crop-production",
+    "name": "Farming (Crop Production)",
+    "category": "Primary",
+    "description": "Cultivation of crops for food, feed, and industrial uses.",
+    "businessModels": ["Commodity sales", "Contracts", "Co-ops"],
+    "revenueDrivers": ["Yield", "Commodity prices", "Acreage"],
+    "costDrivers": ["Inputs", "Water", "Labor"],
+    "valueChain": [
+      { "stage": "Inputs", "description": "Seeds/fertilizers", "marginProfile": "Low" },
+      { "stage": "Production", "description": "Field operations", "marginProfile": "Medium" },
+      { "stage": "Storage", "description": "Silage/transport", "marginProfile": "Medium" }
+    ],
+    "segments": ["Row crops", "Specialty crops"]
+  },
+  {
+    "id": "fintech",
+    "name": "Fintech",
+    "category": "Digital",
+    "description": "Digital financial services spanning payments, lending, wealth, and infrastructure.",
+    "businessModels": ["Interchange", "Lending spreads", "SaaS APIs", "Subscriptions"],
+    "revenueDrivers": ["TPV/volumes", "Take rates", "Net interest margin"],
+    "costDrivers": ["Compliance", "Risk/credit losses", "Customer acquisition"],
+    "valueChain": [
+      { "stage": "Licensing/compliance", "description": "Banking/EMI partners", "marginProfile": "Low" },
+      { "stage": "Core platforms", "description": "Ledger, risk, KYC", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Consumer/SMB channels", "marginProfile": "Medium" }
+    ],
+    "segments": ["Payments", "Lending", "Wealth", "Infra/BaaS"]
+  },
+  {
+    "id": "freight-cargo-transportation",
+    "name": "Freight and Cargo Transportation",
+    "category": "Transportation",
+    "description": "Movement of freight across modes.",
+    "businessModels": ["Asset-based transport", "Brokerage", "Intermodal"],
+    "revenueDrivers": ["Freight rates", "Volumes", "Utilization"],
+    "costDrivers": ["Fuel", "Labor", "Equipment"],
+    "valueChain": [
+      { "stage": "Booking", "description": "Brokerage and planning", "marginProfile": "Medium" },
+      { "stage": "Linehaul", "description": "Transport operations", "marginProfile": "Low" },
+      { "stage": "Handling", "description": "Terminals and drayage", "marginProfile": "Medium" }
+    ],
+    "segments": ["Road", "Rail", "Ocean", "Air cargo"]
+  },
+  {
+    "id": "furniture",
+    "name": "Furniture",
+    "category": "Consumer",
+    "description": "Design and production of home and office furniture.",
+    "businessModels": ["Retail", "Wholesale", "Custom/B2B"],
+    "revenueDrivers": ["Housing cycles", "Design trends", "Channel mix"],
+    "costDrivers": ["Materials", "Manufacturing", "Logistics"],
+    "valueChain": [
+      { "stage": "Design", "description": "Product development", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Wood/upholstery", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Stores/e-comm", "marginProfile": "Medium" }
+    ],
+    "segments": ["Residential", "Office", "Custom"]
+  },
+  {
+    "id": "heavy-electrical-equipment",
+    "name": "Heavy Electrical Equipment",
+    "category": "Manufacturing",
+    "description": "Turbines, transformers, and grid equipment.",
+    "businessModels": ["Equipment sales", "Service contracts"],
+    "revenueDrivers": ["Grid capex", "Project wins", "Service attach"],
+    "costDrivers": ["Materials", "Engineering", "Installation"],
+    "valueChain": [
+      { "stage": "Design", "description": "Engineering", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Heavy assembly", "marginProfile": "Medium" },
+      { "stage": "Installation", "description": "Erection/commissioning", "marginProfile": "Low" },
+      { "stage": "Service", "description": "Maintenance", "marginProfile": "High" }
+    ],
+    "segments": ["Generation", "Transmission", "Distribution"]
+  },
+  {
+    "id": "homebuilding",
+    "name": "Homebuilding",
+    "category": "Construction",
+    "description": "Residential construction and development.",
+    "businessModels": ["Build-to-sell", "Build-to-rent", "Custom"],
+    "revenueDrivers": ["Housing starts", "ASP", "Absorption"],
+    "costDrivers": ["Land", "Materials", "Labor", "Permits"],
+    "valueChain": [
+      { "stage": "Land", "description": "Acquisition/entitlement", "marginProfile": "Low" },
+      { "stage": "Construction", "description": "Build and finish", "marginProfile": "Medium" },
+      { "stage": "Sales", "description": "Marketing/closing", "marginProfile": "Medium" }
+    ],
+    "segments": ["Single-family", "Multifamily", "Build-to-rent"]
+  },
+  {
+    "id": "industrial-conglomerates",
+    "name": "Industrial Conglomerates",
+    "category": "Industrial",
+    "description": "Diversified industrial holdings across segments.",
+    "businessModels": ["Multi-segment sales", "Platform synergies"],
+    "revenueDrivers": ["Portfolio performance", "Synergies", "Capital allocation"],
+    "costDrivers": ["Corporate overhead", "Segment costs"],
+    "valueChain": [
+      { "stage": "Portfolio", "description": "Acquire/manage units", "marginProfile": "Medium" },
+      { "stage": "Operations", "description": "Shared services", "marginProfile": "Medium" }
+    ],
+    "segments": ["Diversified industrial lines"]
+  },
+  {
+    "id": "infrastructure-operations",
+    "name": "Infrastructure Operations",
+    "category": "Infrastructure",
+    "description": "Operation of transport, energy, and civic infrastructure assets.",
+    "businessModels": ["Concessions", "Tolls", "Service fees"],
+    "revenueDrivers": ["Traffic/usage", "Tariffs", "Availability payments"],
+    "costDrivers": ["Maintenance", "Financing", "Staff"],
+    "valueChain": [
+      { "stage": "Concession", "description": "Contracts and financing", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Run assets", "marginProfile": "Medium" },
+      { "stage": "Maintenance", "description": "Lifecycle upkeep", "marginProfile": "Medium" }
+    ],
+    "segments": ["Roads", "Ports", "Airports", "Utilities"]
+  },
+  {
+    "id": "it-services",
+    "name": "IT Services",
+    "category": "Digital",
+    "description": "Technology consulting, integration, and managed services.",
+    "businessModels": ["Projects", "Managed services", "Staff augmentation"],
+    "revenueDrivers": ["Billable hours", "Contract value", "Renewals"],
+    "costDrivers": ["Talent", "Training", "Bench time"],
+    "valueChain": [
+      { "stage": "Consulting", "description": "Assessment/design", "marginProfile": "Medium" },
+      { "stage": "Delivery", "description": "Implementation", "marginProfile": "Medium" },
+      { "stage": "Managed services", "description": "Run/operate", "marginProfile": "Medium" }
+    ],
+    "segments": ["Consulting", "Integration", "Managed services"]
+  },
+  {
+    "id": "jewelry-watchmaking",
+    "name": "Jewelry and Watchmaking",
+    "category": "Consumer",
+    "description": "Design and sale of jewelry and watches.",
+    "businessModels": ["Brand retail", "Wholesale", "Licensing"],
+    "revenueDrivers": ["Brand equity", "Store footprint", "Mix"],
+    "costDrivers": ["Materials", "Craftsmanship", "Marketing"],
+    "valueChain": [
+      { "stage": "Design", "description": "Creative and sourcing", "marginProfile": "High" },
+      { "stage": "Manufacturing", "description": "Craft/assembly", "marginProfile": "Medium" },
+      { "stage": "Retail", "description": "Boutiques/e-comm", "marginProfile": "High" }
+    ],
+    "segments": ["Fine jewelry", "Watches", "Bridal"]
+  },
+  {
+    "id": "legal-services",
+    "name": "Legal Services",
+    "category": "Services",
+    "description": "Law firms and legal support services.",
+    "businessModels": ["Hourly", "Retainers", "Alternative fee arrangements"],
+    "revenueDrivers": ["Utilization", "Rates", "Matter volume"],
+    "costDrivers": ["Talent", "Knowledge systems", "BD"],
+    "valueChain": [
+      { "stage": "Intake", "description": "Client/matter onboarding", "marginProfile": "Medium" },
+      { "stage": "Delivery", "description": "Legal work", "marginProfile": "Medium" },
+      { "stage": "Support", "description": "Knowledge/ops", "marginProfile": "Medium" }
+    ],
+    "segments": ["Corporate", "Litigation", "IP"]
+  },
+  {
+    "id": "marine-ports-services",
+    "name": "Marine Ports and Services",
+    "category": "Transportation",
+    "description": "Port operations, terminals, and marine support services.",
+    "businessModels": ["Concessions", "Handling fees", "Storage"],
+    "revenueDrivers": ["Throughput", "Tariffs", "Value-add services"],
+    "costDrivers": ["Labor", "Equipment", "Maintenance"],
+    "valueChain": [
+      { "stage": "Terminal", "description": "Berth and cranes", "marginProfile": "Medium" },
+      { "stage": "Handling", "description": "Stevedoring and storage", "marginProfile": "Medium" },
+      { "stage": "Services", "description": "Logistics and value-add", "marginProfile": "Medium" }
+    ],
+    "segments": ["Container", "Bulk", "RoRo"]
+  },
+  {
+    "id": "marketing-advertising",
+    "name": "Marketing and Advertising",
+    "category": "Digital",
+    "description": "Agencies, platforms, and adtech delivering marketing outcomes.",
+    "businessModels": ["Media fees", "Retainers", "Performance-based"],
+    "revenueDrivers": ["Ad spend", "Performance", "Platform take rates"],
+    "costDrivers": ["Talent", "Media costs", "Technology"],
+    "valueChain": [
+      { "stage": "Strategy", "description": "Planning and creative", "marginProfile": "Medium" },
+      { "stage": "Activation", "description": "Media buying/ops", "marginProfile": "Medium" },
+      { "stage": "Measurement", "description": "Analytics", "marginProfile": "Medium" }
+    ],
+    "segments": ["Agency", "Adtech", "Performance marketing"]
+  },
+  {
+    "id": "medical-devices",
+    "name": "Medical Devices",
+    "category": "Healthcare",
+    "description": "Design, manufacture, and distribution of diagnostic and therapeutic devices.",
+    "businessModels": ["Capital equipment", "Consumables", "Service contracts"],
+    "revenueDrivers": ["Procedure volumes", "Installed base", "Service attach"],
+    "costDrivers": ["R&D", "Regulatory", "Manufacturing"],
+    "valueChain": [
+      { "stage": "R&D", "description": "Design, clinical validation", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Assembly and QA", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Hospitals and channels", "marginProfile": "Medium" },
+      { "stage": "Service", "description": "Maintenance and training", "marginProfile": "High" }
+    ],
+    "segments": ["Diagnostics", "Implants", "Monitoring"]
+  },
+  {
+    "id": "medical-equipment-supplies",
+    "name": "Medical Equipment and Supplies Manufacturing",
+    "category": "Healthcare",
+    "description": "Production of medical equipment and disposable supplies.",
+    "businessModels": ["Product sales", "Distribution contracts", "Service"],
+    "revenueDrivers": ["Volume", "Hospital budgets", "Consumables"],
+    "costDrivers": ["Materials", "Compliance", "Distribution"],
+    "valueChain": [
+      { "stage": "Design", "description": "Engineering and validation", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Production/QA", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Hospital/clinic channels", "marginProfile": "Medium" }
+    ],
+    "segments": ["Equipment", "Consumables", "Diagnostics"]
+  },
+  {
+    "id": "motion-picture-video",
+    "name": "Motion Picture and Video Industries",
+    "category": "Media",
+    "description": "Production and distribution of films and video content.",
+    "businessModels": ["Box office", "Streaming licensing", "Advertising"],
+    "revenueDrivers": ["Audience", "Distribution deals", "Release slate"],
+    "costDrivers": ["Production", "Marketing", "Distribution"],
+    "valueChain": [
+      { "stage": "Development", "description": "Script/IP acquisition", "marginProfile": "Medium" },
+      { "stage": "Production", "description": "Filming/post", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Theatrical/streaming", "marginProfile": "Medium" }
+    ],
+    "segments": ["Film", "TV", "Streaming originals"]
+  },
+  {
+    "id": "nanotechnology",
+    "name": "Nanotechnology",
+    "category": "Advanced Tech",
+    "description": "Nanomaterials and nanoscale processes for industrial and medical uses.",
+    "businessModels": ["Materials supply", "Licensing", "Devices"],
+    "revenueDrivers": ["Adoption in target sectors", "Licensing deals"],
+    "costDrivers": ["R&D", "Specialized equipment", "Scale-up"],
+    "valueChain": [
+      { "stage": "R&D", "description": "Material/device discovery", "marginProfile": "Low" },
+      { "stage": "Scale-up", "description": "Pilot and manufacturing", "marginProfile": "Medium" },
+      { "stage": "Integration", "description": "Applied in end-markets", "marginProfile": "Medium" }
+    ],
+    "segments": ["Materials", "Devices", "Tools"]
+  },
+  {
+    "id": "natural-gas-distribution",
+    "name": "Natural Gas Distribution",
+    "category": "Energy",
+    "description": "Pipelines and utilities delivering gas to end users.",
+    "businessModels": ["Regulated tariffs", "Distribution fees"],
+    "revenueDrivers": ["Volume", "Tariffs", "Customer base"],
+    "costDrivers": ["Pipeline maintenance", "Gas procurement", "Compliance"],
+    "valueChain": [
+      { "stage": "Transmission", "description": "Pipeline transport", "marginProfile": "Low" },
+      { "stage": "Distribution", "description": "Local networks", "marginProfile": "Medium" },
+      { "stage": "Customer", "description": "Billing/service", "marginProfile": "Medium" }
+    ],
+    "segments": ["Residential", "Commercial", "Industrial"]
+  },
+  {
+    "id": "non-metallic-mineral",
+    "name": "Non-Metallic Mineral Product Manufacturing",
+    "category": "Manufacturing",
+    "description": "Cement, glass, ceramics, and related products.",
+    "businessModels": ["Commodity sales", "Project supply"],
+    "revenueDrivers": ["Construction demand", "Pricing"],
+    "costDrivers": ["Energy", "Materials", "Logistics"],
+    "valueChain": [
+      { "stage": "Raw materials", "description": "Quarrying and inputs", "marginProfile": "Low" },
+      { "stage": "Processing", "description": "Kilns/forming", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "To construction markets", "marginProfile": "Medium" }
+    ],
+    "segments": ["Cement", "Glass", "Ceramics"]
+  },
+  {
+    "id": "nursing-residential-care",
+    "name": "Nursing and Residential Care Facilities",
+    "category": "Healthcare",
+    "description": "Long-term care and assisted living services.",
+    "businessModels": ["Private pay", "Insurance/government reimbursement"],
+    "revenueDrivers": ["Occupancy", "Rates", "Payer mix"],
+    "costDrivers": ["Staffing", "Facilities", "Compliance"],
+    "valueChain": [
+      { "stage": "Facility", "description": "Real estate and setup", "marginProfile": "Low" },
+      { "stage": "Care delivery", "description": "Clinical and support", "marginProfile": "Medium" },
+      { "stage": "Ancillary", "description": "Therapy/amenities", "marginProfile": "Medium" }
+    ],
+    "segments": ["Skilled nursing", "Assisted living", "Memory care"]
+  },
+  {
+    "id": "office-electronics",
+    "name": "Office Electronics",
+    "category": "Manufacturing",
+    "description": "Printers, copiers, and office hardware.",
+    "businessModels": ["Hardware sales", "Managed print services", "Supplies"],
+    "revenueDrivers": ["Hardware placements", "Pages printed", "Supplies"],
+    "costDrivers": ["Components", "Distribution", "Support"],
+    "valueChain": [
+      { "stage": "Design", "description": "Hardware/firmware", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Assembly", "marginProfile": "Medium" },
+      { "stage": "Service", "description": "Managed print", "marginProfile": "High" }
+    ],
+    "segments": ["Printers", "Copiers", "Supplies"]
+  },
+  {
+    "id": "oil-gas-equipment-services",
+    "name": "Oil and Gas Equipment and Services",
+    "category": "Energy",
+    "description": "Oilfield services and equipment supporting upstream operations.",
+    "businessModels": ["Service contracts", "Equipment rentals", "Technology licensing"],
+    "revenueDrivers": ["Rig count", "Well completions", "Day rates"],
+    "costDrivers": ["Equipment", "Labor", "Maintenance"],
+    "valueChain": [
+      { "stage": "Equipment", "description": "Manufacture/rent", "marginProfile": "Medium" },
+      { "stage": "Services", "description": "Drilling/completions", "marginProfile": "Medium" },
+      { "stage": "Support", "description": "Logistics and data", "marginProfile": "Medium" }
+    ],
+    "segments": ["Drilling", "Completion", "Well services"]
+  },
+  {
+    "id": "oil-gas-refining-marketing",
+    "name": "Oil and Gas Refining and Marketing",
+    "category": "Energy",
+    "description": "Downstream refining, fuel distribution, and retail marketing.",
+    "businessModels": ["Refining margins", "Retail fuel", "Wholesale"],
+    "revenueDrivers": ["Crack spreads", "Throughput", "Retail volumes"],
+    "costDrivers": ["Crude feedstock", "Energy", "Logistics"],
+    "valueChain": [
+      { "stage": "Refining", "description": "Crude to products", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Pipelines/terminals", "marginProfile": "Medium" },
+      { "stage": "Retail/wholesale", "description": "Service stations/wholesale", "marginProfile": "Medium" }
+    ],
+    "segments": ["Refining", "Wholesale", "Retail"]
+  },
+  {
+    "id": "online-media",
+    "name": "Online Media",
+    "category": "Digital",
+    "description": "Digital content platforms supported by ads and subscriptions.",
+    "businessModels": ["Advertising", "Subscriptions", "Creator revenue share"],
+    "revenueDrivers": ["MAUs", "Ad load/CPM", "Sub ARPU"],
+    "costDrivers": ["Content moderation", "Bandwidth", "Creator payouts"],
+    "valueChain": [
+      { "stage": "Platform", "description": "Hosting and algorithms", "marginProfile": "High" },
+      { "stage": "Content", "description": "Creation and licensing", "marginProfile": "Medium" },
+      { "stage": "Monetization", "description": "Ads/subs", "marginProfile": "High" }
+    ],
+    "segments": ["Social", "News", "Video"]
+  },
+  {
+    "id": "outsourcing-offshoring",
+    "name": "Outsourcing and Offshoring",
+    "category": "Services",
+    "description": "Third-party delivery of business processes and IT at scale.",
+    "businessModels": ["T&M", "Fixed price", "Outcome-based"],
+    "revenueDrivers": ["Contract wins", "Utilization", "Renewals"],
+    "costDrivers": ["Labor", "Training", "Delivery centers"],
+    "valueChain": [
+      { "stage": "Transition", "description": "Onboarding clients", "marginProfile": "Medium" },
+      { "stage": "Delivery", "description": "Process/IT operations", "marginProfile": "Medium" },
+      { "stage": "Optimization", "description": "Automation improvements", "marginProfile": "Medium" }
+    ],
+    "segments": ["BPO", "IT outsourcing", "Knowledge services"]
+  },
+  {
+    "id": "packaging-containers",
+    "name": "Packaging and Containers",
+    "category": "Manufacturing",
+    "description": "Container and packaging production.",
+    "businessModels": ["Material supply", "Custom solutions"],
+    "revenueDrivers": ["Volume", "Mix", "Value-add"],
+    "costDrivers": ["Materials", "Energy", "Transport"],
+    "valueChain": [
+      { "stage": "Materials", "description": "Paper/plastic/glass/metal", "marginProfile": "Low" },
+      { "stage": "Conversion", "description": "Forming/printing", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "To CPG/industrial", "marginProfile": "Medium" }
+    ],
+    "segments": ["Flexible", "Rigid", "Glass/metal"]
+  },
+  {
+    "id": "paints-coatings-adhesives",
+    "name": "Paints, Coatings, and Adhesives",
+    "category": "Chemicals",
+    "description": "Formulated coatings and adhesives for construction and industry.",
+    "businessModels": ["Product sales", "Contract supply"],
+    "revenueDrivers": ["Construction/industrial demand", "Pricing"],
+    "costDrivers": ["Resins", "Solvents", "Distribution"],
+    "valueChain": [
+      { "stage": "Formulation", "description": "R&D and blending", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Batch production", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Retail/industrial channels", "marginProfile": "Medium" }
+    ],
+    "segments": ["Architectural", "Industrial", "Specialty"]
+  },
+  {
+    "id": "paper-forest-products",
+    "name": "Paper and Forest Products",
+    "category": "Primary",
+    "description": "Production of paper, pulp, and forest-derived materials.",
+    "businessModels": ["Pulp/paper sales", "Packaging board"],
+    "revenueDrivers": ["Pulp prices", "Packaging demand"],
+    "costDrivers": ["Timber", "Energy", "Chemicals"],
+    "valueChain": [
+      { "stage": "Forestry", "description": "Harvesting", "marginProfile": "Low" },
+      { "stage": "Processing", "description": "Pulp/paper", "marginProfile": "Medium" },
+      { "stage": "Conversion", "description": "Board/printing", "marginProfile": "Medium" }
+    ],
+    "segments": ["Pulp", "Paper", "Packaging"]
+  },
+  {
+    "id": "personal-services",
+    "name": "Personal Services",
+    "category": "Consumer",
+    "description": "Individual-focused services such as salons, fitness, repair.",
+    "businessModels": ["Service fees", "Memberships", "Product add-ons"],
+    "revenueDrivers": ["Visit frequency", "Ticket size", "Membership"],
+    "costDrivers": ["Labor", "Rent", "Supplies"],
+    "valueChain": [
+      { "stage": "Acquisition", "description": "Marketing and booking", "marginProfile": "Medium" },
+      { "stage": "Service", "description": "On-site delivery", "marginProfile": "Medium" },
+      { "stage": "Loyalty", "description": "Membership/upsell", "marginProfile": "Medium" }
+    ],
+    "segments": ["Beauty", "Fitness", "Repair"]
+  },
+  {
+    "id": "pesticide-fertilizer-ag-chem",
+    "name": "Pesticide, Fertilizer, and Other Agricultural Chemical Manufacturing",
+    "category": "Chemicals",
+    "description": "Crop protection and nutrient products.",
+    "businessModels": ["Product sales", "Licensing", "Distribution agreements"],
+    "revenueDrivers": ["Acreage", "Pricing", "Product efficacy"],
+    "costDrivers": ["Feedstocks", "R&D", "Regulatory"],
+    "valueChain": [
+      { "stage": "R&D", "description": "Chemistry/biologicals", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Formulation", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Ag retail/co-ops", "marginProfile": "Medium" }
+    ],
+    "segments": ["Fertilizer", "Crop protection", "Biologicals"]
+  },
+  {
+    "id": "petroleum-coal-products",
+    "name": "Petroleum and Coal Products Manufacturing",
+    "category": "Energy",
+    "description": "Refined petroleum products and coal-based outputs.",
+    "businessModels": ["Commodity sales"],
+    "revenueDrivers": ["Crack spreads", "Volume"],
+    "costDrivers": ["Crude/coal inputs", "Energy", "Compliance"],
+    "valueChain": [
+      { "stage": "Processing", "description": "Refining/upgrading", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Pipelines/terminals", "marginProfile": "Medium" }
+    ],
+    "segments": ["Fuels", "Petrochem feedstocks"]
+  },
+  {
+    "id": "plastics-rubber-products",
+    "name": "Plastics and Rubber Products Manufacturing",
+    "category": "Manufacturing",
+    "description": "Conversion of plastics and rubber into components and goods.",
+    "businessModels": ["Component supply", "Custom molding"],
+    "revenueDrivers": ["Industrial demand", "Pricing"],
+    "costDrivers": ["Resins", "Energy", "Labor"],
+    "valueChain": [
+      { "stage": "Materials", "description": "Polymer sourcing", "marginProfile": "Low" },
+      { "stage": "Conversion", "description": "Molding/extrusion", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "OEM/industrial", "marginProfile": "Medium" }
+    ],
+    "segments": ["Automotive", "Packaging", "Industrial"]
+  },
+  {
+    "id": "professional-commercial-equipment-distribution",
+    "name": "Professional and Commercial Equipment and Supplies Distribution",
+    "category": "Distribution",
+    "description": "Wholesale distribution of equipment and supplies.",
+    "businessModels": ["Wholesale", "Value-add services", "Financing"],
+    "revenueDrivers": ["Volume", "Mix", "Service attach"],
+    "costDrivers": ["Procurement", "Logistics", "Credit"],
+    "valueChain": [
+      { "stage": "Procurement", "description": "Supplier management", "marginProfile": "Low" },
+      { "stage": "Distribution", "description": "Warehousing/logistics", "marginProfile": "Medium" },
+      { "stage": "Services", "description": "Financing/training", "marginProfile": "Medium" }
+    ],
+    "segments": ["Industrial", "Medical", "Office"]
+  },
+  {
+    "id": "public-transportation",
+    "name": "Public Transportation",
+    "category": "Transportation",
+    "description": "Mass transit systems operated by public or private entities.",
+    "businessModels": ["Fares", "Subsidies", "Concessions"],
+    "revenueDrivers": ["Ridership", "Fares", "Subsidy levels"],
+    "costDrivers": ["Labor", "Fleet", "Infrastructure upkeep"],
+    "valueChain": [
+      { "stage": "Network", "description": "Route planning", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Fleet operations", "marginProfile": "Low" },
+      { "stage": "Ticketing", "description": "Payments/clearing", "marginProfile": "Low" }
+    ],
+    "segments": ["Bus", "Rail", "Metro"]
+  },
+  {
+    "id": "publishing-broadcasting",
+    "name": "Publishing and Broadcasting",
+    "category": "Media",
+    "description": "Broadcast TV/radio and publishing operations.",
+    "businessModels": ["Advertising", "Subscriptions", "Licensing"],
+    "revenueDrivers": ["Audience", "Ad spend", "Sub growth"],
+    "costDrivers": ["Content", "Distribution", "Technology"],
+    "valueChain": [
+      { "stage": "Content", "description": "Creation/acquisition", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Broadcast/digital", "marginProfile": "Medium" },
+      { "stage": "Monetization", "description": "Ads/subs", "marginProfile": "Medium" }
+    ],
+    "segments": ["Broadcast", "Publishing", "Digital"]
+  },
+  {
+    "id": "real-estate-management-development",
+    "name": "Real Estate Management and Development",
+    "category": "Real Estate",
+    "description": "Property development, leasing, and management.",
+    "businessModels": ["Development sales", "Leasing", "Property management"],
+    "revenueDrivers": ["Occupancy", "Rents", "Development margins"],
+    "costDrivers": ["Land", "Construction", "Financing", "Operations"],
+    "valueChain": [
+      { "stage": "Development", "description": "Site and build", "marginProfile": "Medium" },
+      { "stage": "Leasing", "description": "Marketing and leasing", "marginProfile": "Medium" },
+      { "stage": "Management", "description": "Operations/maintenance", "marginProfile": "Medium" }
+    ],
+    "segments": ["Residential", "Commercial", "Industrial"]
+  },
+  {
+    "id": "recreational-vehicles",
+    "name": "Recreational Vehicles",
+    "category": "Manufacturing",
+    "description": "Manufacture of RVs and caravans.",
+    "businessModels": ["Vehicle sales", "Financing", "Aftermarket"],
+    "revenueDrivers": ["Unit sales", "Seasonality", "Financing"],
+    "costDrivers": ["Materials", "Labor", "Distribution"],
+    "valueChain": [
+      { "stage": "Design", "description": "Product dev", "marginProfile": "Medium" },
+      { "stage": "Manufacturing", "description": "Assembly", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Dealers", "marginProfile": "Medium" }
+    ],
+    "segments": ["Towables", "Motorized", "Campers"]
+  },
+  {
+    "id": "renewable-fuels",
+    "name": "Renewable Fuels",
+    "category": "Energy",
+    "description": "Biofuels and synthetic fuels production.",
+    "businessModels": ["Fuel sales", "Credits/incentives", "Offtake agreements"],
+    "revenueDrivers": ["RIN/LCFS credits", "Fuel pricing", "Volumes"],
+    "costDrivers": ["Feedstocks", "Energy", "Capex"],
+    "valueChain": [
+      { "stage": "Feedstock", "description": "Biomass/feedstock sourcing", "marginProfile": "Low" },
+      { "stage": "Processing", "description": "Conversion plants", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "Blending and logistics", "marginProfile": "Medium" }
+    ],
+    "segments": ["Ethanol", "Biodiesel", "SAF", "Renewable diesel"]
+  },
+  {
+    "id": "research-development-services",
+    "name": "Research and Development Services",
+    "category": "Services",
+    "description": "Contract R&D and lab services for clients.",
+    "businessModels": ["Project fees", "Retainers", "Milestones"],
+    "revenueDrivers": ["Project pipeline", "Utilization", "IP sharing"],
+    "costDrivers": ["Talent", "Labs/equipment", "Regulatory"],
+    "valueChain": [
+      { "stage": "Proposal", "description": "Scoping and design", "marginProfile": "Medium" },
+      { "stage": "Execution", "description": "Experiments/studies", "marginProfile": "Medium" },
+      { "stage": "Reporting", "description": "Findings/transfer", "marginProfile": "Medium" }
+    ],
+    "segments": ["CRO", "Engineering R&D", "Scientific services"]
+  },
+  {
+    "id": "residential-services",
+    "name": "Residential Services",
+    "category": "Consumer",
+    "description": "Home maintenance, cleaning, and related services.",
+    "businessModels": ["Service fees", "Memberships", "Seasonal contracts"],
+    "revenueDrivers": ["Visit frequency", "Ticket size", "Retention"],
+    "costDrivers": ["Labor", "Supplies", "Scheduling"],
+    "valueChain": [
+      { "stage": "Booking", "description": "Scheduling and dispatch", "marginProfile": "Medium" },
+      { "stage": "Service", "description": "On-site work", "marginProfile": "Medium" },
+      { "stage": "Follow-up", "description": "Maintenance plans", "marginProfile": "Medium" }
+    ],
+    "segments": ["Cleaning", "Repairs", "Landscaping"]
+  },
+  {
+    "id": "restaurants",
+    "name": "Restaurants",
+    "category": "Consumer",
+    "description": "Foodservice establishments from QSR to fine dining.",
+    "businessModels": ["Dine-in", "Delivery", "Franchise fees"],
+    "revenueDrivers": ["Traffic", "Check size", "Daypart mix"],
+    "costDrivers": ["Food", "Labor", "Rent", "Delivery fees"],
+    "valueChain": [
+      { "stage": "Supply", "description": "Ingredient procurement", "marginProfile": "Low" },
+      { "stage": "Operations", "description": "Kitchen and service", "marginProfile": "Medium" },
+      { "stage": "Distribution", "description": "On-prem/delivery", "marginProfile": "Medium" }
+    ],
+    "segments": ["QSR", "Fast casual", "Casual/fine", "Delivery-first"]
+  },
+  {
+    "id": "semiconductor-equipment",
+    "name": "Semiconductor Equipment",
+    "category": "Manufacturing",
+    "description": "Tools and equipment for chip fabrication.",
+    "businessModels": ["Equipment sales", "Service/consumables", "Upgrades"],
+    "revenueDrivers": ["Wafer starts", "Node transitions", "Capex cycles"],
+    "costDrivers": ["R&D", "Precision manufacturing", "Supply chain"],
+    "valueChain": [
+      { "stage": "R&D", "description": "Tool design", "marginProfile": "High" },
+      { "stage": "Manufacturing", "description": "Precision build", "marginProfile": "Medium" },
+      { "stage": "Service", "description": "Installs and spares", "marginProfile": "High" }
+    ],
+    "segments": ["Deposition", "Lithography", "Etch/Clean", "Metrology"]
+  },
+  {
+    "id": "shipbuilding",
+    "name": "Shipbuilding",
+    "category": "Manufacturing",
+    "description": "Construction of ships and marine vessels.",
+    "businessModels": ["Project contracts", "Defense programs", "Repairs"],
+    "revenueDrivers": ["Orderbook", "Program funding", "Exports"],
+    "costDrivers": ["Steel", "Labor", "Skilled trades"],
+    "valueChain": [
+      { "stage": "Design", "description": "Naval architecture", "marginProfile": "Medium" },
+      { "stage": "Construction", "description": "Hull and systems", "marginProfile": "Medium" },
+      { "stage": "Outfitting", "description": "Integration and delivery", "marginProfile": "Medium" }
+    ],
+    "segments": ["Commercial", "Defense", "Specialty"]
+  },
+  {
+    "id": "saas",
+    "name": "Software as a Service (SaaS)",
+    "category": "Digital",
+    "description": "Cloud-delivered software products on subscription or usage-based pricing.",
+    "businessModels": ["Subscription", "Usage-based", "Platform/marketplace"],
+    "revenueDrivers": ["Seat growth", "Expansion revenue", "Usage volume"],
+    "costDrivers": ["R&D", "Cloud infra", "Sales & marketing", "Support"],
+    "valueChain": [
+      { "stage": "Product", "description": "Development and roadmap", "marginProfile": "High" },
+      { "stage": "Infrastructure", "description": "Cloud hosting and ops", "marginProfile": "Medium" },
+      { "stage": "Go-to-market", "description": "Sales, marketing, channels", "marginProfile": "Medium" },
+      { "stage": "Success", "description": "Onboarding, support", "marginProfile": "Medium" }
+    ],
+    "segments": ["Horizontal apps", "Vertical SaaS", "Developer platforms"]
+  }
+]
