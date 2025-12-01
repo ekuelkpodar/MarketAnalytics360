@@ -13,7 +13,7 @@
 
 ## OpenRouter configuration
 - Click **AI Reports & Scenarios** panel.
-- Enter your OpenRouter API key, optional base URL, and model string (e.g., `openrouter/anthropic/claude-3.5-sonnet`).
+- Enter your OpenRouter API key, optional base URL, and model string (e.g., `anthropic/claude-3.5-sonnet`). Use the IDs listed in your OpenRouter dashboard.
 - Keys are stored only in your browser localStorage.
 
 ## Stack

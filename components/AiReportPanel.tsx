@@ -19,7 +19,7 @@ const defaultPrompt = `Focus on:
 export default function AiReportPanel({ bundle, region, timeHorizon, scenario }: Props) {
   const [apiKey, setApiKey] = useState("");
   const [baseUrl, setBaseUrl] = useState("https://openrouter.ai/api/v1");
-  const [model, setModel] = useState("openrouter/anthropic/claude-3.5-sonnet");
+  const [model, setModel] = useState("anthropic/claude-3.5-sonnet");
   const [prompt, setPrompt] = useState(defaultPrompt);
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
@@ -167,7 +167,7 @@ export default function AiReportPanel({ bundle, region, timeHorizon, scenario }:
               value={model}
               onChange={(e) => setModel(e.target.value)}
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-primary focus:outline-none"
-              placeholder="openrouter/anthropic/claude-3.5-sonnet"
+              placeholder="anthropic/claude-3.5-sonnet (see OpenRouter model list)"
             />
           </label>
         </div>
