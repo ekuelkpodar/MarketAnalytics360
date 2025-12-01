@@ -67,10 +67,11 @@ export default function AiReportPanel({ bundle, region, timeHorizon, scenario }:
     setStatus("Requesting analysis...");
     persistSettings();
     try {
+      const normalizedModel = model.startsWith("openrouter/") ? model.replace(/^openrouter\//, "") : model;
       const systemPrompt = "You are a senior market analyst. Produce concise, decision-useful insights.";
       const userPrompt = `${prompt}\n\nIndustry data:\n${buildUserPayload()}`;
       const content = await runOpenRouterAnalysis({
-        model,
+        model: normalizedModel,
         apiKey,
         baseUrl,
         systemPrompt,
@@ -92,8 +93,9 @@ export default function AiReportPanel({ bundle, region, timeHorizon, scenario }:
     setError(null);
     persistSettings();
     try {
+      const normalizedModel = model.startsWith("openrouter/") ? model.replace(/^openrouter\//, "") : model;
       await runOpenRouterAnalysis({
-        model,
+        model: normalizedModel,
         apiKey,
         baseUrl,
         systemPrompt: "You are a ping responder.",
@@ -167,7 +169,7 @@ export default function AiReportPanel({ bundle, region, timeHorizon, scenario }:
               value={model}
               onChange={(e) => setModel(e.target.value)}
               className="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:border-primary focus:outline-none"
-              placeholder="anthropic/claude-3.5-sonnet (see OpenRouter model list)"
+              placeholder="anthropic/claude-3.5-sonnet (no 'openrouter/' prefix)"
             />
           </label>
         </div>
