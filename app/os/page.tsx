@@ -66,6 +66,7 @@ export default function AdvancedOS() {
   const [activeTab, setActiveTab] = useState<
     "Dashboard" | "Indicators" | "Macro" | "Risks" | "Trends" | "Opportunities" | "AI Reports"
   >("Dashboard");
+  const [indicatorFilter, setIndicatorFilter] = useState<"All" | "Macro" | "Leading" | "Lagging" | "Sentiment" | "Commodity">("All");
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? window.localStorage : null;
@@ -127,6 +128,14 @@ export default function AdvancedOS() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const filteredIndicators = indicatorHub.filter(
+    (ind) => indicatorFilter === "All" || ind.category === indicatorFilter || ind.type === indicatorFilter
+  );
+
+  const exportReport = (format: string) => {
+    alert(`Stub: exporting current snapshot as ${format}. Replace with real export handler.`);
   };
 
   return (
@@ -316,8 +325,22 @@ export default function AdvancedOS() {
             </div>
             <div className="text-xs text-slate-500">Why this matters: AI annotations per indicator</div>
           </div>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs">
+            {["All", "Macro", "Leading", "Lagging", "Sentiment", "Commodity"].map((f) => (
+              <button
+                key={f}
+                onClick={() => setIndicatorFilter(f as typeof indicatorFilter)}
+                className={classNames(
+                  "rounded-full border px-3 py-1 font-semibold",
+                  indicatorFilter === f ? "border-emerald-200 bg-emerald-50 text-emerald-700" : "border-slate-200 bg-white text-slate-700"
+                )}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
           <div className="mt-4 grid gap-3 md:grid-cols-3">
-            {indicatorHub.map((ind) => (
+            {filteredIndicators.map((ind) => (
               <IndicatorCard key={ind.name} datum={ind} />
             ))}
           </div>
@@ -350,6 +373,28 @@ export default function AdvancedOS() {
                   <div className="text-xs text-slate-600">{item.explanation}</div>
                 </div>
               ))}
+            </div>
+            <div className="mt-3 rounded-lg border border-slate-100 bg-slate-50 p-3">
+              <div className="text-sm font-semibold text-slate-900">Macro heatmap</div>
+              <div className="mt-2 grid grid-cols-3 gap-2 text-xs font-semibold text-slate-700">
+                <span>Shock</span>
+                <span>Score</span>
+                <span>Risk band</span>
+              </div>
+              <div className="mt-1 grid grid-cols-3 gap-2 text-xs">
+                {shockRadar.map((item) => {
+                  const band = item.score > 70 ? "High" : item.score > 50 ? "Medium" : "Low";
+                  const bandColor =
+                    band === "High" ? "bg-rose-100 text-rose-700" : band === "Medium" ? "bg-amber-100 text-amber-700" : "bg-emerald-100 text-emerald-700";
+                  return (
+                    <Fragment key={`heat-${item.name}`}>
+                      <span className="rounded bg-white px-2 py-1">{item.name}</span>
+                      <span className="rounded bg-white px-2 py-1 text-center">{item.score}</span>
+                      <span className={classNames("rounded px-2 py-1 text-center", bandColor)}>{band}</span>
+                    </Fragment>
+                  );
+                })}
+              </div>
             </div>
           </div>
           <div className="space-y-4">
@@ -669,6 +714,20 @@ export default function AdvancedOS() {
                 )}
               </div>
             ))}
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs">
+            <button
+              className="rounded-lg border border-slate-200 px-3 py-2 font-semibold text-slate-800"
+              onClick={() => exportReport("JSON snapshot")}
+            >
+              Snapshot AI outputs
+            </button>
+            <button
+              className="rounded-lg border border-slate-200 px-3 py-2 font-semibold text-slate-800"
+              onClick={() => exportReport("Markdown report")}
+            >
+              Build AI report
+            </button>
           </div>
         </section>
 
