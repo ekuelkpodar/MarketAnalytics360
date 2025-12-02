@@ -4,6 +4,7 @@ interface RunOpenRouterParams {
   baseUrl?: string;
   systemPrompt: string;
   userPrompt: string;
+  temperature?: number;
 }
 
 export async function runOpenRouterAnalysis({
@@ -11,7 +12,8 @@ export async function runOpenRouterAnalysis({
   apiKey,
   baseUrl = "https://openrouter.ai/api/v1",
   systemPrompt,
-  userPrompt
+  userPrompt,
+  temperature
 }: RunOpenRouterParams): Promise<string> {
   if (!apiKey) {
     throw new Error("OpenRouter API key is missing.");
@@ -30,7 +32,8 @@ export async function runOpenRouterAnalysis({
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
-      ]
+      ],
+      temperature
     })
   });
 

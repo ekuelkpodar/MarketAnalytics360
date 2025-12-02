@@ -1,0 +1,32 @@
+[
+  {
+    "industryId": "automotive",
+    "nodes": [
+      { "id": "raw", "label": "Raw materials", "stage": "Upstream", "margin": "Low" },
+      { "id": "battery", "label": "Battery supply", "stage": "Upstream", "margin": "Medium" },
+      { "id": "assembly", "label": "Assembly", "stage": "Midstream", "margin": "Medium" },
+      { "id": "software", "label": "Software/SDV", "stage": "Downstream", "margin": "High" },
+      { "id": "aftermarket", "label": "Aftermarket", "stage": "Downstream", "margin": "High" }
+    ],
+    "edges": [
+      { "from": "raw", "to": "battery", "constraint": "Commodity volatility" },
+      { "from": "battery", "to": "assembly", "constraint": "Supply concentration" },
+      { "from": "assembly", "to": "software", "constraint": "Integration speed" },
+      { "from": "software", "to": "aftermarket", "constraint": "Feature cadence" }
+    ]
+  },
+  {
+    "industryId": "saas",
+    "nodes": [
+      { "id": "product", "label": "Product", "stage": "Upstream", "margin": "High" },
+      { "id": "infra", "label": "Infrastructure", "stage": "Midstream", "margin": "Medium" },
+      { "id": "sales", "label": "Go-to-market", "stage": "Downstream", "margin": "Medium" },
+      { "id": "success", "label": "Customer success", "stage": "Downstream", "margin": "Medium" }
+    ],
+    "edges": [
+      { "from": "product", "to": "infra", "constraint": "Cloud cost" },
+      { "from": "infra", "to": "sales", "constraint": "Reliability" },
+      { "from": "sales", "to": "success", "constraint": "Onboarding" }
+    ]
+  }
+]

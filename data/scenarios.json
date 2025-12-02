@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Baseline",
+    "narrative": "Steady demand; gradual normalization of costs.",
+    "direction": "Stable growth",
+    "amplifiedRisks": ["Input volatility return", "Talent attrition"],
+    "opportunities": ["Service attach", "Selective price lift"],
+    "recommendations": ["Lock strategic suppliers", "Prioritize high-margin mixes"],
+    "kpis": ["Bookings growth", "Gross margin", "Retention"]
+  },
+  {
+    "name": "Inflation shock",
+    "narrative": "Input costs spike; rate environment tightens.",
+    "direction": "Margin pressure",
+    "amplifiedRisks": ["Consumer pullback", "Working capital strain"],
+    "opportunities": ["Dynamic pricing", "Hedge programs"],
+    "recommendations": ["Renegotiate contracts", "Accelerate automation"],
+    "kpis": ["ASP", "Input index", "DSO/DPO"]
+  },
+  {
+    "name": "Supply chain collapse",
+    "narrative": "Tier-2/3 supplier disruption cascades.",
+    "direction": "Capacity shortfall",
+    "amplifiedRisks": ["Stockouts", "Service degradation"],
+    "opportunities": ["Nearshoring pilots", "Inventory buffers"],
+    "recommendations": ["Dual-source critical parts", "Expedite logistics options"],
+    "kpis": ["Fill rate", "Lead times", "Backlog days"]
+  },
+  {
+    "name": "Technology disruption",
+    "narrative": "AI-first entrants shift economics and experiences.",
+    "direction": "Share risk, margin mix change",
+    "amplifiedRisks": ["Price pressure", "Churn"],
+    "opportunities": ["Launch copilot", "Platform partnerships"],
+    "recommendations": ["Refocus roadmap", "Bundle services", "Upskill workforce"],
+    "kpis": ["Win rate", "NPS", "R&D velocity"]
+  }
+]

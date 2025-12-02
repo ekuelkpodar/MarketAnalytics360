@@ -1,0 +1,18 @@
+[
+  {
+    "industryId": "automotive",
+    "players": [
+      { "name": "Alpha Auto", "category": "OEM", "position": "EV leader", "advantage": "Vertical battery integration" },
+      { "name": "Motion Parts", "category": "Tier 1 supplier", "position": "ADAS modules", "advantage": "IP + scale" },
+      { "name": "DriveStack", "category": "Software", "position": "SDV platform", "advantage": "Developer ecosystem" }
+    ]
+  },
+  {
+    "industryId": "saas",
+    "players": [
+      { "name": "CloudCore", "category": "Platform", "position": "Horizontal SaaS", "advantage": "Network + integrations" },
+      { "name": "FinEdge", "category": "Vertical SaaS", "position": "Fintech ops", "advantage": "Reg/ledger expertise" },
+      { "name": "OpsAI", "category": "AI", "position": "Workflow copilot", "advantage": "Data network effects" }
+    ]
+  }
+]

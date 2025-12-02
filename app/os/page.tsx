@@ -12,7 +12,6 @@ import {
   shockRadar,
   structuralTrends,
   viewModes,
-  Agent,
   IndicatorDatum,
   LayoutMode,
   ViewMode
@@ -31,8 +30,9 @@ import {
   XAxis,
   YAxis
 } from "recharts";
-import { runOpenRouterAnalysis } from "../../lib/openrouterClient";
+import { runMultiAgent } from "../../lib/openrouterAgents";
 import classNames from "classnames";
+import CommandPalette from "../../components/CommandPalette";
 
 interface AgentResult {
   id: string;
@@ -85,29 +85,13 @@ export default function AdvancedOS() {
     setAgentLoading(true);
     setAgentError(null);
     try {
-      const normalizedModel = model.startsWith("openrouter/") ? model.replace(/^openrouter\//, "") : model;
-      const runs = await Promise.all(
-        agentPresets.map(async (agent) => {
-          try {
-            const content = await runOpenRouterAnalysis({
-              apiKey,
-              baseUrl,
-              model: normalizedModel,
-              systemPrompt: agent.systemPrompt,
-              userPrompt: buildAgentUserPrompt(agent)
-            });
-            return { id: agent.id, title: agent.title, content } as AgentResult;
-          } catch (err) {
-            return {
-              id: agent.id,
-              title: agent.title,
-              content: "",
-              error: err instanceof Error ? err.message : "Error"
-            };
-          }
-        })
-      );
-      setAgentResults(runs);
+      const runs = await runMultiAgent({
+        agents: agentPresets.map((a) => ({ ...a, model })),
+        userPrompt: buildAgentUserPrompt(),
+        apiKey,
+        baseUrl
+      });
+      setAgentResults(runs as AgentResult[]);
     } catch (err) {
       setAgentError(err instanceof Error ? err.message : "Unknown error");
     } finally {
@@ -115,12 +99,26 @@ export default function AdvancedOS() {
     }
   };
 
-  const buildAgentUserPrompt = (agent: Agent) => {
-    return `Mode: ${viewMode}\nLayout: ${layout}\nFocus: ${agent.focus}\nProvide concise, decision-grade output with bullet structure and clear calls to action.`;
+  const buildAgentUserPrompt = () => {
+    return `Mode: ${viewMode}\nLayout: ${layout}\nProvide concise, decision-grade output with bullet structure and clear calls to action.`;
+  };
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
+      <CommandPalette
+        commands={[
+          { id: "run-agents", label: "Run AI agents", action: runAgents },
+          { id: "scroll-indicators", label: "Go to Indicators", action: () => scrollTo("indicators") },
+          { id: "scroll-risk", label: "Go to Risk grid", action: () => scrollTo("risk-grid") },
+          { id: "scroll-compare", label: "Go to Comparison", action: () => scrollTo("comparison") },
+          { id: "scroll-scenarios", label: "Go to Scenarios", action: () => scrollTo("scenarios") }
+        ]}
+      />
       <div className="bg-slate-900 text-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-6">
           <div className="flex flex-wrap items-center justify-between gap-3">
@@ -212,7 +210,7 @@ export default function AdvancedOS() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <section id="indicators" className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Indicator Intelligence Center</div>
@@ -316,7 +314,7 @@ export default function AdvancedOS() {
           </div>
         </section>
 
-        <section className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
+        <section id="risk-grid" className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
@@ -371,7 +369,7 @@ export default function AdvancedOS() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <section id="comparison" className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
               <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Multi-Industry Comparison</div>
@@ -482,7 +480,7 @@ export default function AdvancedOS() {
           </div>
         </section>
 
-        <section className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
+        <section id="scenarios" className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>

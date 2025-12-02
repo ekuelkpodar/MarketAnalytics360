@@ -1,0 +1,34 @@
+[
+  {
+    "name": "AI adoption & automation",
+    "description": "Workflow and production automation with AI copilots and robotics.",
+    "likelihood": 86,
+    "impact": 92,
+    "horizon": "Medium",
+    "implication": "Margin expansion, workforce reskilling, capex reallocation."
+  },
+  {
+    "name": "Electrification & storage",
+    "description": "Shift to electric platforms and grid-scale/storage buildout.",
+    "likelihood": 78,
+    "impact": 88,
+    "horizon": "Long",
+    "implication": "Supply chain rewiring; new infra bottlenecks; capital intensity."
+  },
+  {
+    "name": "Regulatory/ESG tightening",
+    "description": "Higher compliance and disclosure requirements across industries.",
+    "likelihood": 74,
+    "impact": 80,
+    "horizon": "Medium",
+    "implication": "Barrier to entry for scaled players; cost pressure for laggards."
+  },
+  {
+    "name": "Cloud & data-native stacks",
+    "description": "Full-stack modernization enabling faster cycle times and observability.",
+    "likelihood": 83,
+    "impact": 79,
+    "horizon": "Short",
+    "implication": "Speed advantage for adopters; legacy drag risk for incumbents."
+  }
+]
