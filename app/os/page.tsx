@@ -4,11 +4,14 @@ import { useEffect, useMemo, useState } from "react";
 import {
   agentPresets,
   compareSet,
+  getPlayersByIndustry,
+  getScenarios,
+  getTrends,
+  getValueChainMap,
   indicatorHub,
   layoutModes,
   opportunities,
   riskGrid,
-  scenarios,
   shockRadar,
   structuralTrends,
   viewModes,
@@ -33,6 +36,7 @@ import {
 import { runMultiAgent } from "../../lib/openrouterAgents";
 import classNames from "classnames";
 import CommandPalette from "../../components/CommandPalette";
+import { Scenario as ScenarioType, Trend, ValueChainMap } from "../../lib/advancedTypes";
 
 interface AgentResult {
   id: string;
@@ -51,6 +55,15 @@ export default function AdvancedOS() {
   const [agentResults, setAgentResults] = useState<AgentResult[]>([]);
   const [agentLoading, setAgentLoading] = useState(false);
   const [agentError, setAgentError] = useState<string | null>(null);
+  const [trends] = useState<Trend[]>(() => getTrends());
+  const [scenariosData] = useState<ScenarioType[]>(() => getScenarios());
+  const [valueChainMap, setValueChainMap] = useState<ValueChainMap | undefined>(() =>
+    getValueChainMap(selectedIndustries[0])
+  );
+  const [players, setPlayers] = useState(() => getPlayersByIndustry(selectedIndustries[0]));
+  const [activeTab, setActiveTab] = useState<
+    "Dashboard" | "Indicators" | "Macro" | "Risks" | "Trends" | "Opportunities" | "AI Reports"
+  >("Dashboard");
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? window.localStorage : null;
@@ -67,6 +80,12 @@ export default function AdvancedOS() {
     () => compareSet.filter((c) => selectedIndustries.includes(c.id)),
     [selectedIndustries]
   );
+
+  useEffect(() => {
+    const primary = selectedIndustries[0];
+    setValueChainMap(getValueChainMap(primary));
+    setPlayers(getPlayersByIndustry(primary));
+  }, [selectedIndustries]);
 
   const comparisonRadar = useMemo(
     () =>
@@ -116,7 +135,9 @@ export default function AdvancedOS() {
           { id: "scroll-indicators", label: "Go to Indicators", action: () => scrollTo("indicators") },
           { id: "scroll-risk", label: "Go to Risk grid", action: () => scrollTo("risk-grid") },
           { id: "scroll-compare", label: "Go to Comparison", action: () => scrollTo("comparison") },
-          { id: "scroll-scenarios", label: "Go to Scenarios", action: () => scrollTo("scenarios") }
+          { id: "scroll-scenarios", label: "Go to Scenarios", action: () => scrollTo("scenarios") },
+          { id: "scroll-valuechain", label: "Go to Value Chain", action: () => scrollTo("value-chain") },
+          { id: "scroll-players", label: "Go to Players", action: () => scrollTo("players") }
         ]}
       />
       <div className="bg-slate-900 text-slate-50">
@@ -156,12 +177,28 @@ export default function AdvancedOS() {
                 {mode}
               </button>
             ))}
+            <span className="ml-4">Tabs:</span>
+            {["Dashboard", "Indicators", "Macro", "Risks", "Trends", "Opportunities", "AI Reports"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => {
+                  setActiveTab(tab as typeof activeTab);
+                  scrollTo(tab.toLowerCase().replace(" ", "-"));
+                }}
+                className={classNames(
+                  "rounded-full px-3 py-1 font-semibold",
+                  activeTab === tab ? "bg-white text-slate-900" : "bg-white/10 text-white"
+                )}
+              >
+                {tab}
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
       <div className="mx-auto max-w-6xl space-y-6 px-4 py-8">
-        <section className="grid gap-4 lg:grid-cols-[1.2fr,0.8fr]">
+        <section id="value-chain" className="grid gap-4 lg:grid-cols-[1.2fr,0.8fr]">
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
@@ -210,6 +247,62 @@ export default function AdvancedOS() {
           </div>
         </section>
 
+        <section id="players" className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Value Chain Engine</div>
+                <div className="text-lg font-semibold text-slate-900">Node map & constraints</div>
+              </div>
+              <div className="text-xs text-slate-500">“What breaks this chain?”</div>
+            </div>
+            <div className="mt-3 grid gap-3 md:grid-cols-2">
+              {(valueChainMap?.nodes ?? []).map((node) => (
+                <div key={node.id} className="rounded-lg border border-slate-100 bg-slate-50 p-3">
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm font-semibold text-slate-900">{node.label}</div>
+                    <div className="text-xs text-slate-600">{node.stage}</div>
+                  </div>
+                  <div className="mt-1 text-xs text-slate-700">Margin: {node.margin}</div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-3 rounded-lg border border-emerald-100 bg-emerald-50 p-3 text-xs text-emerald-800">
+              {valueChainMap?.edges.map((edge) => (
+                <div key={`${edge.from}-${edge.to}`} className="flex items-center justify-between">
+                  <span>
+                    {edge.from} → {edge.to}
+                  </span>
+                  <span className="rounded-full bg-white px-2 py-0.5">Constraint: {edge.constraint ?? "Flow"}</span>
+                </div>
+              ))}
+              {!valueChainMap && <div>No value-chain map for this industry yet.</div>}
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Competitive Structure</div>
+                <div className="text-lg font-semibold text-slate-900">Key players & positioning</div>
+              </div>
+            </div>
+            <div className="mt-3 space-y-2">
+              {(players?.players ?? []).map((p) => (
+                <div key={p.name} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm font-semibold text-slate-900">{p.name}</div>
+                    <div className="text-xs text-slate-600">{p.category}</div>
+                  </div>
+                  <div className="text-xs text-slate-700">{p.position}</div>
+                  <div className="text-[11px] text-emerald-700">Advantage: {p.advantage}</div>
+                </div>
+              ))}
+              {!players && <div className="text-sm text-slate-600">No player profiles yet.</div>}
+            </div>
+          </div>
+        </section>
+
         <section id="indicators" className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
           <div className="flex items-center justify-between">
             <div>
@@ -225,7 +318,7 @@ export default function AdvancedOS() {
           </div>
         </section>
 
-        <section className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
+        <section id="trends" className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
@@ -261,14 +354,12 @@ export default function AdvancedOS() {
                   <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Structural Trends Engine</div>
                   <div className="text-lg font-semibold text-slate-900">Long-term forces</div>
                 </div>
-                <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
-                  AI scored
-                </div>
-              </div>
-              <div className="mt-3 space-y-3">
-                {structuralTrends.map((trend) => (
-                  <div key={trend.name} className="rounded-lg border border-slate-100 bg-slate-50 p-3">
-                    <div className="flex items-center justify-between">
+              <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">AI scored</div>
+            </div>
+            <div className="mt-3 space-y-3">
+              {structuralTrends.map((trend) => (
+                <div key={trend.name} className="rounded-lg border border-slate-100 bg-slate-50 p-3">
+                  <div className="flex items-center justify-between">
                       <div>
                         <div className="text-sm font-semibold text-slate-900">{trend.name}</div>
                         <div className="text-xs text-slate-600">{trend.description}</div>
@@ -347,21 +438,23 @@ export default function AdvancedOS() {
                 <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Scenario Generator</div>
                 <div className="text-lg font-semibold text-slate-900">Baseline, stress, disruption</div>
               </div>
-              <div className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">{scenarios.length} presets</div>
+              <div className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                {scenariosData.length} presets
+              </div>
             </div>
             <div className="mt-3 space-y-3">
-              {scenarios.map((scenario) => (
+              {scenariosData.map((scenario) => (
                 <div key={scenario.name} className="rounded-lg border border-slate-100 bg-slate-50 p-3">
                   <div className="flex items-center justify-between">
                     <div className="text-sm font-semibold text-slate-900">{scenario.name}</div>
-                    <div className="text-xs text-slate-600">{scenario.impact}</div>
+                    <div className="text-xs text-slate-600">{scenario.direction}</div>
                   </div>
                   <div className="text-xs text-slate-700">{scenario.narrative}</div>
                   <div className="mt-2 grid gap-1 text-[11px] text-slate-700 sm:grid-cols-2">
                     <div>Opportunities: {scenario.opportunities.join("; ")}</div>
-                    <div>Risks: {scenario.risks.join("; ")}</div>
+                    <div>Risks: {scenario.amplifiedRisks.join("; ")}</div>
                     <div>KPIs: {scenario.kpis.join(", ")}</div>
-                    <div>Actions: {scenario.actions.join(", ")}</div>
+                    <div>Actions: {scenario.recommendations.join(", ")}</div>
                   </div>
                 </div>
               ))}
@@ -422,7 +515,7 @@ export default function AdvancedOS() {
           </div>
         </section>
 
-        <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <section id="ai-reports" className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div>
               <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">AI Market Copilot</div>
@@ -513,24 +606,26 @@ export default function AdvancedOS() {
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Data & Extensibility</div>
-                <div className="text-lg font-semibold text-slate-900">Real-time hooks</div>
+                <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Trends Engine</div>
+                <div className="text-lg font-semibold text-slate-900">Long-horizon forces</div>
               </div>
-              <div className="text-xs text-slate-500">FRED, World Bank, News, Prices</div>
+              <div className="text-xs text-slate-500">AI-scored likelihood and impact</div>
             </div>
-            <div className="mt-3 space-y-2 text-sm text-slate-700">
-              <div className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                <div className="font-semibold text-slate-900">APIs</div>
-                <div className="text-xs text-slate-600">FRED, World Bank, News sentiment, Stock/Commodity feeds, Hiring, Search trends</div>
-              </div>
-              <div className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                <div className="font-semibold text-slate-900">Widget framework</div>
-                <div className="text-xs text-slate-600">Drag-and-drop, save custom dashboards, user bundles (e.g., Energy Pack).</div>
-              </div>
-              <div className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                <div className="font-semibold text-slate-900">Assistant</div>
-                <div className="text-xs text-slate-600">Minimizable AI assistant with command palette triggers.</div>
-              </div>
+            <div className="mt-3 space-y-2">
+              {trends.map((trend) => (
+                <div key={trend.name} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2 text-sm">
+                  <div className="flex items-center justify-between">
+                    <div className="font-semibold text-slate-900">{trend.name}</div>
+                    <div className="text-xs text-slate-600">{trend.horizon} horizon</div>
+                  </div>
+                  <div className="text-xs text-slate-700">{trend.description}</div>
+                  <div className="mt-1 flex flex-wrap gap-2 text-[11px] text-slate-700">
+                    <span className="rounded-full bg-white px-2 py-0.5">Likelihood: {trend.likelihood}</span>
+                    <span className="rounded-full bg-white px-2 py-0.5">Impact: {trend.impact}</span>
+                    <span className="rounded-full bg-white px-2 py-0.5">Implication: {trend.implication}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
