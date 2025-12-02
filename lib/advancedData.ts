@@ -74,6 +74,13 @@ export interface Agent {
   systemPrompt: string;
   focus: string;
 }
+export interface MacroLinkage {
+  name: string;
+  sensitivity: "Low" | "Medium" | "High";
+  exposure: string;
+  why: string;
+  direction?: "Positive" | "Negative" | "Mixed";
+}
 
 export const viewModes: ViewMode[] = ["Beginner", "Analyst", "Executive", "Quant"];
 export const layoutModes: LayoutMode[] = ["Dashboard", "Research", "Executive", "Quant"];
@@ -337,4 +344,12 @@ export const agentPresets: Agent[] = [
     focus: "Map vulnerabilities",
     systemPrompt: "You are a risk officer. Map vulnerabilities and mitigations."
   }
+];
+
+export const macroLinkages: MacroLinkage[] = [
+  { name: "GDP sensitivity", sensitivity: "High", exposure: "Cyclical demand exposure", why: "Volume and ASP linked to GDP", direction: "Positive" },
+  { name: "Inflation sensitivity", sensitivity: "Medium", exposure: "Input cost pass-through", why: "Margin compression risk", direction: "Negative" },
+  { name: "Rates exposure", sensitivity: "Medium", exposure: "Capex/financing", why: "Higher WACC dampens projects", direction: "Negative" },
+  { name: "FX dependency", sensitivity: "Low", exposure: "Import/export mix", why: "Currency mismatches affect COGS", direction: "Mixed" },
+  { name: "Commodity linkage", sensitivity: "High", exposure: "Feedstock volatility", why: "Cost spikes or tailwinds", direction: "Mixed" }
 ];

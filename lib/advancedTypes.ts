@@ -33,6 +33,7 @@ export interface MacroLinkage {
   sensitivity: Sensitivity;
   exposure: string;
   why: string;
+  direction?: "Positive" | "Negative" | "Mixed";
 }
 
 export interface Indicator {

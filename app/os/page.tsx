@@ -8,6 +8,7 @@ import {
   getScenarios,
   getTrends,
   getValueChainMap,
+  macroLinkages,
   indicatorHub,
   layoutModes,
   opportunities,
@@ -318,7 +319,7 @@ export default function AdvancedOS() {
           </div>
         </section>
 
-        <section id="trends" className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
+        <section id="macro" className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
             <div className="flex items-center justify-between">
               <div>
@@ -378,29 +379,81 @@ export default function AdvancedOS() {
             <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Opportunity Radar</div>
-                  <div className="text-lg font-semibold text-slate-900">White space map</div>
+                  <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Macro → Industry Linkages</div>
+                  <div className="text-lg font-semibold text-slate-900">Sensitivity and direction</div>
                 </div>
-                <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
-                  AI suggested
-                </div>
+                <div className="text-xs text-slate-500">AI explanations</div>
               </div>
               <div className="mt-3 space-y-2">
-                {opportunities.map((opp) => (
-                  <div key={opp.name} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
-                    <div className="flex items-center justify-between text-sm font-semibold text-slate-900">
-                      <span>{opp.name}</span>
-                      <span className="text-xs text-slate-600">{opp.category}</span>
+                {macroLinkages.map((link) => (
+                  <div key={link.name} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2 text-sm">
+                    <div className="flex items-center justify-between">
+                      <div className="font-semibold text-slate-900">{link.name}</div>
+                      <div className="text-xs text-slate-600">{link.exposure}</div>
                     </div>
-                    <div className="text-xs text-slate-700">{opp.rationale}</div>
-                    <div className="mt-1 flex flex-wrap gap-1 text-[11px] text-slate-600">
-                      <span className="rounded-full bg-white px-2 py-0.5">Enablers: {opp.enablers.join(", ")}</span>
-                      <span className="rounded-full bg-white px-2 py-0.5">ROI: {opp.roi}</span>
-                      <span className="rounded-full bg-white px-2 py-0.5">Difficulty: {opp.difficulty}/5</span>
+                    <div className="text-xs text-slate-700">{link.why}</div>
+                    <div className="mt-1 flex flex-wrap gap-2 text-[11px] text-slate-700">
+                      <span className="rounded-full bg-white px-2 py-0.5">Sensitivity: {link.sensitivity}</span>
+                      {link.direction && <span className="rounded-full bg-white px-2 py-0.5">Direction: {link.direction}</span>}
                     </div>
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="trends" className="grid gap-4 lg:grid-cols-[1.1fr,0.9fr]">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Structural Trends Engine</div>
+                <div className="text-lg font-semibold text-slate-900">Long-term forces</div>
+              </div>
+              <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">AI scored</div>
+            </div>
+            <div className="mt-3 space-y-3">
+              {structuralTrends.map((trend) => (
+                <div key={trend.name} className="rounded-lg border border-slate-100 bg-slate-50 p-3">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <div className="text-sm font-semibold text-slate-900">{trend.name}</div>
+                      <div className="text-xs text-slate-600">{trend.description}</div>
+                    </div>
+                    <div className="text-right text-xs text-slate-600">
+                      <div>Likelihood: {trend.likelihood}</div>
+                      <div>Impact: {trend.impact}</div>
+                      <div>Horizon: {trend.horizon}</div>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-xs text-slate-700">Implication: {trend.implication}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+            <div className="flex items-center justify-between">
+              <div>
+                <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Opportunity Radar</div>
+                <div className="text-lg font-semibold text-slate-900">White space map</div>
+              </div>
+              <div className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">AI suggested</div>
+            </div>
+            <div className="mt-3 space-y-2">
+              {opportunities.map((opp) => (
+                <div key={opp.name} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2">
+                  <div className="flex items-center justify-between text-sm font-semibold text-slate-900">
+                    <span>{opp.name}</span>
+                    <span className="text-xs text-slate-600">{opp.category}</span>
+                  </div>
+                  <div className="text-xs text-slate-700">{opp.rationale}</div>
+                  <div className="mt-1 flex flex-wrap gap-1 text-[11px] text-slate-600">
+                    <span className="rounded-full bg-white px-2 py-0.5">Enablers: {opp.enablers.join(", ")}</span>
+                    <span className="rounded-full bg-white px-2 py-0.5">ROI: {opp.roi}</span>
+                    <span className="rounded-full bg-white px-2 py-0.5">Difficulty: {opp.difficulty}/5</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -652,6 +705,10 @@ function IndicatorCard({ datum }: { datum: IndicatorDatum }) {
     datum.direction === "up"
       ? "bg-emerald-100 text-emerald-700 border border-emerald-200"
       : "bg-rose-100 text-rose-700 border border-rose-200";
+  const impactBadge =
+    datum.direction === "up"
+      ? "text-emerald-700 bg-emerald-50 border border-emerald-100"
+      : "text-rose-700 bg-rose-50 border border-rose-100";
 
   return (
     <div className="rounded-lg border border-slate-100 bg-slate-50 p-3">
@@ -680,6 +737,12 @@ function IndicatorCard({ datum }: { datum: IndicatorDatum }) {
         </ResponsiveContainer>
       </div>
       <div className="mt-2 text-xs text-slate-700">Why this matters: {datum.why}</div>
+      <div className="mt-2 flex flex-wrap gap-2 text-[11px] text-slate-700">
+        <span className={classNames("rounded-full px-2 py-0.5 border", impactBadge)}>
+          Impact: {datum.direction === "up" ? "Positive" : "Negative"}
+        </span>
+        <span className="rounded-full bg-white px-2 py-0.5 border border-slate-100">Sensitivity: {datum.sensitivity}</span>
+      </div>
     </div>
   );
 }
