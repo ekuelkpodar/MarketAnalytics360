@@ -38,6 +38,7 @@ import { runMultiAgent } from "../../lib/openrouterAgents";
 import classNames from "classnames";
 import CommandPalette from "../../components/CommandPalette";
 import { Scenario as ScenarioType, Trend, ValueChainMap } from "../../lib/advancedTypes";
+import { Fragment } from "react";
 
 interface AgentResult {
   id: string;
@@ -138,7 +139,10 @@ export default function AdvancedOS() {
           { id: "scroll-compare", label: "Go to Comparison", action: () => scrollTo("comparison") },
           { id: "scroll-scenarios", label: "Go to Scenarios", action: () => scrollTo("scenarios") },
           { id: "scroll-valuechain", label: "Go to Value Chain", action: () => scrollTo("value-chain") },
-          { id: "scroll-players", label: "Go to Players", action: () => scrollTo("players") }
+          { id: "scroll-players", label: "Go to Players", action: () => scrollTo("players") },
+          { id: "scroll-exports", label: "Go to Exports", action: () => scrollTo("exports") },
+          { id: "scroll-ai-reports", label: "Go to AI Reports", action: () => scrollTo("ai-reports") },
+          { id: "run-comparison", label: "Refresh comparison view", action: () => scrollTo("comparison") }
         ]}
       />
       <div className="bg-slate-900 text-slate-50">
@@ -555,16 +559,58 @@ export default function AdvancedOS() {
               </RadarChart>
             </ResponsiveContainer>
           </div>
-          <div className="mt-3 grid gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {selectedIndustryData.map((item) => (
-              <div key={item.id} className="rounded-lg border border-slate-100 bg-slate-50 px-3 py-2 text-sm text-slate-800">
-                <div className="font-semibold">{item.name}</div>
-                <div className="text-xs text-slate-600">
-                  Growth {item.growth}% • Margin {item.margin}% • CAPEX {item.capex}% • Risk {item.risk} • Complexity{" "}
-                  {item.complexity}
-                </div>
+          <div className="mt-3 grid gap-3 md:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+              <div className="text-sm font-semibold text-slate-900">Heatmap (risk vs margin)</div>
+              <div className="mt-2 grid grid-cols-3 gap-2 text-xs text-slate-700">
+                <div className="font-semibold">Industry</div>
+                <div className="font-semibold">Risk</div>
+                <div className="font-semibold">Margin</div>
+                {selectedIndustryData.map((item) => (
+                  <Fragment key={item.id}>
+                    <div className="rounded bg-white px-2 py-1">{item.name}</div>
+                    <div
+                      className={classNames(
+                        "rounded px-2 py-1 text-center",
+                        item.risk > 70 ? "bg-rose-100 text-rose-700" : item.risk > 50 ? "bg-amber-100 text-amber-700" : "bg-emerald-100 text-emerald-700"
+                      )}
+                    >
+                      {item.risk}
+                    </div>
+                    <div
+                      className={classNames(
+                        "rounded px-2 py-1 text-center",
+                        item.margin > 25 ? "bg-emerald-100 text-emerald-700" : item.margin > 15 ? "bg-amber-100 text-amber-700" : "bg-rose-100 text-rose-700"
+                      )}
+                    >
+                      {item.margin}%
+                    </div>
+                  </Fragment>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-slate-50 p-3">
+              <div className="text-sm font-semibold text-slate-900">Ranked table</div>
+              <div className="mt-2 grid grid-cols-4 gap-2 text-xs font-semibold text-slate-700">
+                <span>Industry</span>
+                <span>Growth</span>
+                <span>CAPEX</span>
+                <span>Complexity</span>
+              </div>
+              <div className="mt-1 space-y-1 text-sm text-slate-800">
+                {selectedIndustryData
+                  .slice()
+                  .sort((a, b) => b.growth - a.growth)
+                  .map((item) => (
+                    <div key={item.id} className="grid grid-cols-4 gap-2 rounded bg-white px-2 py-1 text-xs">
+                      <span className="font-semibold text-slate-900">{item.name}</span>
+                      <span>{item.growth}%</span>
+                      <span>{item.capex}%</span>
+                      <span>{item.complexity}</span>
+                    </div>
+                  ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -633,7 +679,7 @@ export default function AdvancedOS() {
                 <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Report Generator</div>
                 <div className="text-lg font-semibold text-slate-900">Templates & exports</div>
               </div>
-              <div className="text-xs text-slate-500">PDF / Markdown / HTML</div>
+              <div className="text-xs text-slate-500">PDF / Markdown / HTML / Notion</div>
             </div>
             <div className="mt-3 grid gap-2 md:grid-cols-2">
               {[
@@ -653,10 +699,14 @@ export default function AdvancedOS() {
               <button className="rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white">Export PDF</button>
               <button className="rounded-lg border border-slate-200 px-4 py-2 font-semibold text-slate-800">Export Markdown</button>
               <button className="rounded-lg border border-slate-200 px-4 py-2 font-semibold text-slate-800">Export HTML</button>
+              <button className="rounded-lg border border-slate-200 px-4 py-2 font-semibold text-slate-800">Copy to Notion</button>
+            </div>
+            <div className="mt-2 rounded-lg border border-slate-100 bg-slate-50 px-3 py-2 text-xs text-slate-700">
+              Snapshot mode: Freeze current dashboard state and export as JSON for audit/sharing.
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm" id="exports">
             <div className="flex items-center justify-between">
               <div>
                 <div className="text-xs uppercase tracking-[0.18em] text-emerald-600">Trends Engine</div>
